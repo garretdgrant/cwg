@@ -1,6 +1,7 @@
 import { IconCheck } from '@tabler/icons-react';
 import { Button, Container, Group, Image, List, Text, ThemeIcon, Title } from '@mantine/core';
 import image from './image.svg';
+import image2 from './image2.svg'
 import classes from './HeroBullets.module.css';
 
 export function HeroBullets() {
@@ -9,7 +10,8 @@ export function HeroBullets() {
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
-            A <span className={classes.highlight}>modern</span> React <br /> components library
+            Designing <span className={classes.highlight}>Modern</span> <br /> Web Solutions for< br/>Your Business
+            {/* A <span className={classes.highlight}>modern</span> React <br /> components library */}
           </Title>
           <Text c="dimmed" mt="md">
             Build fully functional accessible web applications faster than ever – Mantine includes

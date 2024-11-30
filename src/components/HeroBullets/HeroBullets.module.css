@@ -1,12 +1,12 @@
 .inner {
   display: flex;
   justify-content: space-between;
-  padding-top: calc(var(--mantine-spacing-xl) * 4);
+  /* padding-top: calc(var(--mantine-spacing-xl) * 4); */
   padding-bottom: calc(var(--mantine-spacing-xl) * 4);
 }
 
 .content {
-  max-width: 480px;
+  max-width: 500px;
   margin-right: calc(var(--mantine-spacing-xl) * 3);
 
   @media (max-width: $mantine-breakpoint-md) {

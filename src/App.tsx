@@ -8,7 +8,7 @@ export default function App() {
   return (
     <>
       <ColorSchemeScript defaultColorScheme="dark" />
-      <MantineProvider theme={theme}>
+      <MantineProvider defaultColorScheme="dark" theme={theme}>
         <Router />
       </MantineProvider>
     </>
