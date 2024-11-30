@@ -6,7 +6,7 @@ import classes from './HeroBullets.module.css';
 
 export function HeroBullets() {
   return (
-    <Container size="md">
+    <Container className={classes.container} size="md">
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
