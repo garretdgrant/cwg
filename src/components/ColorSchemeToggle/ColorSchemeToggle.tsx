@@ -1,4 +1,4 @@
-import { IconBolt, IconBoltOff, IconBorderRadius } from '@tabler/icons-react';
+import { IconBolt, IconBoltOff } from '@tabler/icons-react';
 import { useMantineColorScheme } from '@mantine/core';
 import styles from './ColorSchemeToggle.module.css';
 

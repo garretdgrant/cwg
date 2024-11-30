@@ -1,12 +1,5 @@
-import {
-  IconBook,
-  IconChartPie3,
-  IconChevronDown,
-  IconCode,
-  IconCoin,
-  IconFingerprint,
-  IconNotification,
-} from '@tabler/icons-react';
+import { IconApps, IconBook, IconChevronDown, IconCode, IconCoin } from '@tabler/icons-react';
+import { NavLink, To, useNavigate } from 'react-router-dom';
 import {
   Anchor,
   Box,
@@ -29,61 +22,60 @@ import { useDisclosure } from '@mantine/hooks';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import classes from './HeaderMegaMenu.module.css';
 
-const mockdata = [
+const servicesData = [
   {
     icon: IconCode,
-    title: 'Open source',
-    description: 'This Pokémon’s cry is very loud and distracting',
+    title: 'Web Design',
+    description: `Beautiful, user-friendly websites tailored to your brand and goals.`,
+    to: 'web-design',
   },
   {
-    icon: IconCoin,
-    title: 'Free for everyone',
-    description: 'The fluid of Smeargle’s tail secretions changes',
+    icon: IconApps,
+    title: 'Full Web Applications',
+    description: `Custom web apps built for performance, scalability, and your business needs.`,
+    to: 'web-app',
   },
   {
     icon: IconBook,
-    title: 'Documentation',
-    description: 'Yanma is capable of seeing 360 degrees without',
-  },
-  {
-    icon: IconFingerprint,
-    title: 'Security',
-    description: 'The shell’s rounded shape and the grooves on its.',
-  },
-  {
-    icon: IconChartPie3,
-    title: 'Analytics',
-    description: 'This Pokémon uses its flying ability to quickly chase',
-  },
-  {
-    icon: IconNotification,
-    title: 'Notifications',
-    description: 'Combusken battles with the intensely hot flames it spews',
+    title: 'Seo',
+    description: `Boost your visibility and rankings with proven SEO strategies.`,
+    to: 'seo',
   },
 ];
+
+const navLinkStyleReset = {
+  textDecoration: 'none',
+  color: 'inherit',
+};
 
 export function HeaderMegaMenu() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const theme = useMantineTheme();
+  const navigate = useNavigate();
 
-  const links = mockdata.map((item) => (
+  const links = servicesData.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Group wrap="nowrap" align="flex-start">
         <ThemeIcon size={34} variant="default" radius="md">
           <item.icon size={22} color={theme.colors.blue[6]} />
         </ThemeIcon>
-        <div>
+        <NavLink onClick={closeDrawer} style={navLinkStyleReset} to={item.to}>
           <Text size="sm" fw={500}>
             {item.title}
           </Text>
           <Text size="xs" c="dimmed">
             {item.description}
           </Text>
-        </div>
+        </NavLink>
       </Group>
     </UnstyledButton>
   ));
+
+  const drawerClick = (path: To) => {
+    navigate(path);
+    closeDrawer();
+  };
 
   return (
     <Box pb={120}>
@@ -94,25 +86,25 @@ export function HeaderMegaMenu() {
           </Text>
 
           <Group h="100%" gap={0} visibleFrom="sm">
-            <a href="#" className={classes.link}>
-              Home
-            </a>
+            <NavLink style={navLinkStyleReset} to={'/'} className={classes.link}>
+              <Text className={classes.link}>Home</Text>
+            </NavLink>
             <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
               <HoverCard.Target>
-                <a href="#" className={classes.link}>
+                <NavLink to={'/services'} className={classes.link}>
                   <Center inline>
                     <Box component="span" mr={5}>
-                      Features
+                      Services
                     </Box>
                     <IconChevronDown size={16} color={theme.colors.blue[6]} />
                   </Center>
-                </a>
+                </NavLink>
               </HoverCard.Target>
 
               <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
                 <Group justify="space-between" px="md">
-                  <Text fw={500}>Features</Text>
-                  <Anchor href="#" fz="xs">
+                  <Text fw={500}>Services</Text>
+                  <Anchor onClick={() => navigate('/services')} fz="xs">
                     View all
                   </Anchor>
                 </Group>
@@ -130,20 +122,23 @@ export function HeaderMegaMenu() {
                         Get started
                       </Text>
                       <Text size="xs" c="dimmed">
-                        Their food sources have decreased, and their numbers
+                        Partner with us to build innovative solutions that bring your vision to
+                        life.
                       </Text>
                     </div>
-                    <Button variant="default">Get started</Button>
+                    <Button onClick={() => navigate('/contact')} variant="default">
+                      Get started
+                    </Button>
                   </Group>
                 </div>
               </HoverCard.Dropdown>
             </HoverCard>
-            <a href="#" className={classes.link}>
-              Learn
-            </a>
-            <a href="#" className={classes.link}>
-              Academy
-            </a>
+            <NavLink style={navLinkStyleReset} to={'/pricing'} className={classes.link}>
+              <Text className={classes.link}>Pricing</Text>
+            </NavLink>
+            <NavLink style={navLinkStyleReset} to={'/'} className={classes.link}>
+              <Text className={classes.link}>Contact</Text>
+            </NavLink>
           </Group>
 
           <Group visibleFrom="sm">
@@ -155,7 +150,6 @@ export function HeaderMegaMenu() {
             <ColorSchemeToggle />
             <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
           </Group>
-
         </Group>
       </header>
 
@@ -171,30 +165,29 @@ export function HeaderMegaMenu() {
         <ScrollArea h="calc(100vh - 80px" mx="-md">
           <Divider my="sm" />
 
-          <a href="#" className={classes.link}>
+          <a onClick={() => drawerClick('/')} className={classes.link}>
             Home
           </a>
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
-                Features
+                Services
               </Box>
               <IconChevronDown size={16} color={theme.colors.blue[6]} />
             </Center>
           </UnstyledButton>
           <Collapse in={linksOpened}>{links}</Collapse>
-          <a href="#" className={classes.link}>
-            Learn
+          <a onClick={() => drawerClick('/pricing')} className={classes.link}>
+            Pricing
           </a>
-          <a href="#" className={classes.link}>
-            Academy
+          <a onClick={() => drawerClick('/contact')} className={classes.link}>
+            Contact
           </a>
 
           <Divider my="sm" />
 
           <Group justify="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button onClick={() => drawerClick('/contact')}>Get Started</Button>
           </Group>
         </ScrollArea>
       </Drawer>
