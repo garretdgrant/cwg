@@ -1,5 +1,8 @@
+import { HeroImageBackground } from "@/components/HeroImageBackground/HeroImageBackground";
 function ContactPage() {
-  return <div>ContactPage</div>;
+    return (
+        <HeroImageBackground />
+      )
 }
 
 export default ContactPage;

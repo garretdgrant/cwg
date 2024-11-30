@@ -1,8 +1,8 @@
 import { HeroImageBackground } from "@/components/HeroImageBackground/HeroImageBackground";
-function PricingPage() {
+function WebAppPage() {
     return (
         <HeroImageBackground />
       )
 }
 
-export default PricingPage;
+export default WebAppPage;

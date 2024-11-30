@@ -1,5 +1,9 @@
+import { HeroImageBackground } from "@/components/HeroImageBackground/HeroImageBackground";
+
 function AboutPage() {
-  return <div>AboutPage</div>;
+  return (
+    <HeroImageBackground />
+  )
 }
 
 export default AboutPage;
