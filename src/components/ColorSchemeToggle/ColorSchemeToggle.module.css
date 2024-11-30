@@ -1,0 +1,22 @@
+.colorSchemeToggle {
+  border: 2px solid var(--mantine-color-gray-4); /* Neutral border */
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%; /* Fully rounded for a modern look */
+  cursor: pointer;
+  background-color: var(--mantine-color-gray-0); /* Light background for light mode */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease; /* Smooth transition */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.colorSchemeToggle:hover {
+  background-color: var(--mantine-color-gray-2); /* Slightly darker background */
+  border-color: var(--mantine-color-blue-4); /* Glowing border effect */
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 0 8px var(--mantine-color-blue-4); /* Add glow and depth */
+  transform: scale(1.1); /* Slight zoom effect */
+}
