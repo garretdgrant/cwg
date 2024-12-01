@@ -79,7 +79,7 @@ export function FeaturesCards() {
         Websites That{' '}
         <Text
           variant="gradient"
-          gradient={{ from: '#4facfe', to: '#00f2fe', deg: 90 }}
+          gradient={{ from: 'rgba(69, 255, 236, 1)', to: 'rgba(0, 143, 232, 1)', deg: 90 }}
           className={classes.highlight}
         >
           Work
