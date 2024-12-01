@@ -1,12 +1,12 @@
 import { IconCheck } from '@tabler/icons-react';
 import { Button, Container, Group, Image, List, Text, ThemeIcon, Title } from '@mantine/core';
 import image from './image.svg';
-import image2 from './image2.svg';
 import classes from './HeroBullets.module.css';
 
 export function HeroBullets() {
   return (
-    <Container className={classes.container} size="md">
+    <Container size='xl' className={classes.outterContainer}>
+    <Container  className={classes.container} size="md">
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
@@ -58,6 +58,7 @@ export function HeroBullets() {
         </div>
         <Image src={image} className={classes.image} />
       </div>
+    </Container>
     </Container>
   );
 }

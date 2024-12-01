@@ -9,7 +9,7 @@ import {
   IconUserCode,
 } from '@tabler/icons-react';
 import {
-  Badge,
+  Button,
   Card,
   Container,
   Group,
@@ -17,8 +17,10 @@ import {
   Text,
   Title,
   useMantineTheme,
+  Image
 } from '@mantine/core';
 import classes from './FeaturesCards.module.css';
+import rain from './rect2.svg'
 
 const featureData = [
   {
@@ -59,6 +61,7 @@ const featureData = [
   },
 ];
 
+
 export function FeaturesCards() {
   const theme = useMantineTheme();
   const features = featureData.map((feature) => (
@@ -74,6 +77,10 @@ export function FeaturesCards() {
   ));
 
   return (
+    <Container className={classes.outterContainer}>
+      <Image  src={rain} className={classes.rain} />
+      <Image src={rain} className={classes.rain2} />
+
     <Container size="lg" py="xl">
       <Title order={2} className={classes.title} ta="center" mt="sm">
         Websites That{' '}
@@ -91,10 +98,11 @@ export function FeaturesCards() {
         Custom-built websites designed for speed, security, and seamless usability. We’ll handle the
         tech, so you can focus on growing your business.
       </Text>
-
-      <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
+      {/* <Button className={`${classes.card} ${classes.callToAction}`}>Call Today</Button> */}
+      <SimpleGrid className={classes.grid} cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
         {features}
       </SimpleGrid>
+    </Container>
     </Container>
   );
 }
