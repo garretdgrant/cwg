@@ -1,4 +1,13 @@
-import { IconCookie, IconGauge, IconUser, IconDeviceIpadCheck, IconBrandAws } from '@tabler/icons-react';
+import {
+  IconBrandAws,
+  IconCookie,
+  IconDeviceIpadCheck,
+  IconGauge,
+  IconLocation,
+  IconTimeline,
+  IconUser,
+  IconUserCode,
+} from '@tabler/icons-react';
 import {
   Badge,
   Card,
@@ -31,22 +40,22 @@ const featureData = [
     icon: IconBrandAws,
   },
   {
-    title: 'Extreme performance',
+    title: 'SEO Optimization',
     description:
-      'This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit',
-    icon: IconGauge,
+      'Boost your website’s visibility on search engines with built-in SEO best practices, ensuring your business ranks higher and reaches the right audience.',
+    icon: IconTimeline,
   },
   {
-    title: 'Privacy focused',
+    title: ' Stress-Free Maintenance',
     description:
-      'People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma',
-    icon: IconUser,
+      'We handle all website updates and upkeep, so you can focus on growing your business without worrying about downtime or technical issues. This includes unlimited edits on our monthly plan!',
+    icon: IconUserCode,
   },
   {
-    title: 'No third parties',
+    title: 'US-Based Development',
     description:
-      'They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves',
-    icon: IconCookie,
+      'Professional US-based team, ensuring clear communication, timely support, and quality you can trust.',
+    icon: IconLocation,
   },
 ];
 
@@ -66,19 +75,21 @@ export function FeaturesCards() {
 
   return (
     <Container size="lg" py="xl">
-      <Group justify="center">
-        <Badge variant="filled" size="lg">
-          Best company ever
-        </Badge>
-      </Group>
-
       <Title order={2} className={classes.title} ta="center" mt="sm">
-        Integrate effortlessly with any technology stack
+        Websites That{' '}
+        <Text
+          variant="gradient"
+          gradient={{ from: '#4facfe', to: '#00f2fe', deg: 90 }}
+          className={classes.highlight}
+        >
+          Work
+        </Text>{' '}
+        as Hard as You Do
       </Title>
 
       <Text c="dimmed" className={classes.description} ta="center" mt="md">
-        Every once in a while, you’ll see a Golbat that’s missing some fangs. This happens when
-        hunger drives it to try biting a Steel-type Pokémon.
+        Custom-built websites designed for speed, security, and seamless usability. We’ll handle the
+        tech, so you can focus on growing your business.
       </Text>
 
       <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
