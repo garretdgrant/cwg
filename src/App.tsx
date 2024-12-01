@@ -1,16 +1,8 @@
 import '@mantine/core/styles.css';
 
-import { ColorSchemeScript, MantineProvider, createTheme } from '@mantine/core';
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { Router } from './Router';
-
-export const theme = createTheme({
-  /** Put your mantine theme override here */
-  primaryColor: 'blue'
-});
-
-
-
-
+import { theme } from './theme';
 
 export default function App() {
   return (
