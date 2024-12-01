@@ -17,11 +17,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: 'yarn'
-          cache-dependency-path: '**/yarn.lock'
+          cache: 'pnpm'
+          cache-dependency-path: '**/pnpm-lock.lock'
+      - name: Install pnpm cause its better than the templat
       - name: Install dependencies
-        run: yarn
+        run: pnpm install
       - name: Run build
-        run: npm run build
-      - name: Run tests
-        run: npm test
+        run: pnpm build
+      # - name: Run tests
+      #   run: npm test

@@ -50,7 +50,6 @@
   cursor: pointer;
   transition: ease-in-out 0.2s;
   background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9));
-
 }
 
 .card:hover,
@@ -60,12 +59,12 @@
   box-shadow: 0 4px 20px rgba(79, 172, 254, 0.5); /* Subtle blue glow */
 
   /* Mobile-specific adjustments for focus */
-@media (max-width: $mantine-breakpoint-sm) {
-  .card:focus {
-    transform: translateY(-5px); /* Slightly less aggressive lift on mobile */
-    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4); /* Adjusted shadow intensity */
+  @media (max-width: $mantine-breakpoint-sm) {
+    .card:focus {
+      transform: translateY(-5px); /* Slightly less aggressive lift on mobile */
+      box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4); /* Adjusted shadow intensity */
+    }
   }
-}
 }
 
 .cardTitle {

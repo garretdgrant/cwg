@@ -86,15 +86,15 @@ export function HeaderMegaMenu() {
           </Text>
 
           <Group h="100%" gap={0} visibleFrom="sm">
-            <NavLink style={navLinkStyleReset} to={'/'} className={classes.link}>
+            <NavLink style={navLinkStyleReset} to="/" className={classes.link}>
               <Text className={classes.link}>Home</Text>
             </NavLink>
-            <NavLink style={navLinkStyleReset} to={'/about'} className={classes.link}>
+            <NavLink style={navLinkStyleReset} to="/about" className={classes.link}>
               <Text className={classes.link}>About</Text>
             </NavLink>
             <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
               <HoverCard.Target>
-                <NavLink to={'/services'} className={classes.link}>
+                <NavLink to="/services" className={classes.link}>
                   <Center inline>
                     <Box component="span" mr={5}>
                       Services
@@ -136,10 +136,10 @@ export function HeaderMegaMenu() {
                 </div>
               </HoverCard.Dropdown>
             </HoverCard>
-            <NavLink style={navLinkStyleReset} to={'/pricing'} className={classes.link}>
+            <NavLink style={navLinkStyleReset} to="/pricing" className={classes.link}>
               <Text className={classes.link}>Pricing</Text>
             </NavLink>
-            <NavLink style={navLinkStyleReset} to={'/contact'} className={classes.link}>
+            <NavLink style={navLinkStyleReset} to="/contact" className={classes.link}>
               <Text className={classes.link}>Contact</Text>
             </NavLink>
           </Group>

@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "lint": "npm run eslint && npm run stylelint",
+    "lint": "pnpm run eslint --fix && pnpm run stylelint",
     "eslint": "eslint . --cache",
     "stylelint": "stylelint '**/*.css' --cache",
     "prettier": "prettier --check \"**/*.{ts,tsx,css}\"",
