@@ -1,7 +1,7 @@
 import { IconCheck } from '@tabler/icons-react';
 import { Button, Container, Group, Image, List, Text, ThemeIcon, Title } from '@mantine/core';
 import image from './image.svg';
-import image2 from './image2.svg'
+import image2 from './image2.svg';
 import classes from './HeroBullets.module.css';
 
 export function HeroBullets() {
@@ -10,12 +10,14 @@ export function HeroBullets() {
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
-            Designing <span className={classes.highlight}>Modern</span> <br /> Web Solutions for< br/>Your Business
+            Designing <span className={classes.highlight}>Modern</span> <br /> Web Solutions for
+            <br />
+            Your Business
             {/* A <span className={classes.highlight}>modern</span> React <br /> components library */}
           </Title>
           <Text c="dimmed" mt="md">
-          We build custom, high-performing websites tailored to your business needs
-          - no shortcuts, no bs - just results-driven solutions you can count on.
+            We build custom, high-performing websites tailored to your business needs - no
+            shortcuts, no bs - just results-driven solutions you can count on.
           </Text>
 
           <List
@@ -35,13 +37,13 @@ export function HeroBullets() {
             </List.Item>
             <List.Item>
               <b>Optimized for Performance and SEO</b> – Our custom-built websites are fast,
-              responsive, and built with SEO best practices in mind, helping you rank higher
-              on Google and attract the customers you deserve.
+              responsive, and built with SEO best practices in mind, helping you rank higher on
+              Google and attract the customers you deserve.
             </List.Item>
             <List.Item>
-              <b>Stress-Free Website Management</b> – Your monthly plan includes secure AWS
-              hosting, ongoing maintenance, and unlimited edits, so your website stays fast,
-              secure, and always up-to-date without any extra costs or headaches.
+              <b>Stress-Free Website Management</b> – Your monthly plan includes secure AWS hosting,
+              ongoing maintenance, and unlimited edits, so your website stays fast, secure, and
+              always up-to-date without any extra costs or headaches.
             </List.Item>
           </List>
 
