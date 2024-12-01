@@ -5,10 +5,10 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import HomePage from './pages/Home.page';
 import PricingPage from './pages/PricingPage';
-import ServicesPage from './pages/ServicesPage';
-import WebDesignPage from './pages/WebDesignPage';
-import WebAppPage from './pages/WebAppPage';
 import SeoPage from './pages/SeoPage';
+import ServicesPage from './pages/ServicesPage';
+import WebAppPage from './pages/WebAppPage';
+import WebDesignPage from './pages/WebDesignPage';
 
 const router = createBrowserRouter([
   {
@@ -24,7 +24,6 @@ const router = createBrowserRouter([
       { path: '/services', element: <ServicesPage /> },
       { path: '/web-app', element: <WebAppPage /> },
       { path: '/seo', element: <SeoPage /> },
-
 
       { path: '*', element: <NotFoundImage /> },
     ],

@@ -1,8 +1,7 @@
-import { HeroImageBackground } from "@/components/HeroImageBackground/HeroImageBackground";
+import { HeroImageBackground } from '@/components/HeroImageBackground/HeroImageBackground';
+
 function PricingPage() {
-    return (
-        <HeroImageBackground />
-      )
+  return <HeroImageBackground />;
 }
 
 export default PricingPage;

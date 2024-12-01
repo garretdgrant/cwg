@@ -1,9 +1,7 @@
-import { HeroImageBackground } from "@/components/HeroImageBackground/HeroImageBackground"
+import { HeroImageBackground } from '@/components/HeroImageBackground/HeroImageBackground';
 
 function WebDesignPage() {
-    return (
-        <HeroImageBackground />
-      )
+  return <HeroImageBackground />;
 }
 
-export default WebDesignPage
+export default WebDesignPage;

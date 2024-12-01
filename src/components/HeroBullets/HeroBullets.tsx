@@ -14,8 +14,8 @@ export function HeroBullets() {
             {/* A <span className={classes.highlight}>modern</span> React <br /> components library */}
           </Title>
           <Text c="dimmed" mt="md">
-            Build fully functional accessible web applications faster than ever – Mantine includes
-            more than 120 customizable components and hooks to cover you in any situation
+          We build custom, high-performing websites tailored to your business needs
+          - no shortcuts, no bs - just results-driven solutions you can count on.
           </Text>
 
           <List
@@ -29,16 +29,19 @@ export function HeroBullets() {
             }
           >
             <List.Item>
-              <b>TypeScript based</b> – build type safe applications, all components and hooks
-              export types
+              <b>No Templates, No Shortcuts </b> – We build 100% hand-coded websites from scratch,
+              delivering superior performance, unmatched flexibility, and tailored designs that
+              align perfectly with your business goals—no WordPress or page builders in sight.
             </List.Item>
             <List.Item>
-              <b>Free and open source</b> – all packages have MIT license, you can use Mantine in
-              any project
+              <b>Optimized for Performance and SEO</b> – Our custom-built websites are fast,
+              responsive, and built with SEO best practices in mind, helping you rank higher
+              on Google and attract the customers you deserve.
             </List.Item>
             <List.Item>
-              <b>No annoying focus ring</b> – focus ring will appear only when user navigates with
-              keyboard
+              <b>Stress-Free Website Management</b> – Your monthly plan includes secure AWS
+              hosting, ongoing maintenance, and unlimited edits, so your website stays fast,
+              secure, and always up-to-date without any extra costs or headaches.
             </List.Item>
           </List>
 
