@@ -19,7 +19,7 @@ import {
   Title,
   useMantineTheme,
 } from '@mantine/core';
-import rain from './rect2.svg';
+import rain from './rect.svg';
 import classes from './FeaturesCards.module.css';
 
 const featureData = [
