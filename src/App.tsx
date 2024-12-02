@@ -7,8 +7,8 @@ import { theme } from './theme';
 export default function App() {
   return (
     <>
-      <ColorSchemeScript defaultColorScheme="dark" />
-      <MantineProvider defaultColorScheme="dark" theme={theme}>
+      <ColorSchemeScript defaultColorScheme="auto" />
+      <MantineProvider defaultColorScheme="auto" theme={theme}>
         <Router />
       </MantineProvider>
     </>

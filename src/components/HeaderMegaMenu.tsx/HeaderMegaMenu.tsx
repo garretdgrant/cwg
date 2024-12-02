@@ -20,6 +20,7 @@ import {
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
+import EmailModal from '../EmailModal/EmailModal';
 import classes from './HeaderMegaMenu.module.css';
 
 const servicesData = [
@@ -85,7 +86,7 @@ export function HeaderMegaMenu() {
             CWG
           </Text>
 
-          <Group h="100%" gap={0} visibleFrom="sm">
+          <Group h="100%" gap={0} visibleFrom="md">
             <NavLink style={navLinkStyleReset} to="/" className={classes.link}>
               <Text className={classes.link}>Home</Text>
             </NavLink>
@@ -144,14 +145,11 @@ export function HeaderMegaMenu() {
             </NavLink>
           </Group>
 
-          <Group visibleFrom="sm">
+          <Group maw={''}>
             <ColorSchemeToggle />
-            <Button>Get Started</Button>
-          </Group>
-
-          <Group hiddenFrom="sm">
-            <ColorSchemeToggle />
-            <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
+            <EmailModal />
+            <Button visibleFrom='sm'>Get Started</Button>
+            <Burger hiddenFrom="md" opened={drawerOpened} onClick={toggleDrawer} />
           </Group>
         </Group>
       </header>
@@ -162,7 +160,7 @@ export function HeaderMegaMenu() {
         size="100%"
         padding="md"
         title="Navigation"
-        hiddenFrom="sm"
+        hiddenFrom="lg"
         zIndex={1000000}
       >
         <ScrollArea h="calc(100vh - 80px" mx="-md">
