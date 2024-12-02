@@ -148,7 +148,7 @@ export function HeaderMegaMenu() {
           <Group maw={''}>
             <ColorSchemeToggle />
             <EmailModal />
-            <Button visibleFrom='sm'>Get Started</Button>
+            <Button visibleFrom="sm">Get Started</Button>
             <Burger hiddenFrom="md" opened={drawerOpened} onClick={toggleDrawer} />
           </Group>
         </Group>

@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+:root[data-mantine-color-scheme="light"] body {
+  --mantine-color-body: var(--mantine-color-gray-2);
+}
+
+/* For dark mode */
+:root[data-mantine-color-scheme="dark"] body {
+  --mantine-color-body: #282827;
+}
