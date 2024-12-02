@@ -13,14 +13,14 @@ import {
   Card,
   Container,
   Group,
+  Image,
   SimpleGrid,
   Text,
   Title,
   useMantineTheme,
-  Image
 } from '@mantine/core';
+import rain from './rect2.svg';
 import classes from './FeaturesCards.module.css';
-import rain from './rect2.svg'
 
 const featureData = [
   {
@@ -61,7 +61,6 @@ const featureData = [
   },
 ];
 
-
 export function FeaturesCards() {
   const theme = useMantineTheme();
   const features = featureData.map((feature) => (
@@ -78,31 +77,31 @@ export function FeaturesCards() {
 
   return (
     <Container className={classes.outterContainer}>
-      <Image  src={rain} className={classes.rain} />
+      <Image src={rain} className={classes.rain} />
       <Image src={rain} className={classes.rain2} />
 
-    <Container size="lg" py="xl">
-      <Title order={2} className={classes.title} ta="center" mt="sm">
-        Websites That{' '}
-        <Text
-          variant="gradient"
-          gradient={{ from: 'rgba(69, 255, 236, 1)', to: 'rgba(0, 143, 232, 1)', deg: 90 }}
-          className={classes.highlight}
-        >
-          Work
-        </Text>{' '}
-        as Hard as You Do
-      </Title>
+      <Container size="lg" py="xl">
+        <Title order={2} className={classes.title} ta="center" mt="sm">
+          Websites That{' '}
+          <Text
+            variant="gradient"
+            gradient={{ from: 'rgba(69, 255, 236, 1)', to: 'rgba(0, 143, 232, 1)', deg: 90 }}
+            className={classes.highlight}
+          >
+            Work
+          </Text>{' '}
+          as Hard as You Do
+        </Title>
 
-      <Text c="dimmed" className={classes.description} ta="center" mt="md">
-        Custom-built websites designed for speed, security, and seamless usability. We’ll handle the
-        tech, so you can focus on growing your business.
-      </Text>
-      {/* <Button className={`${classes.card} ${classes.callToAction}`}>Call Today</Button> */}
-      <SimpleGrid className={classes.grid} cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
-        {features}
-      </SimpleGrid>
-    </Container>
+        <Text c="dimmed" className={classes.description} ta="center" mt="md">
+          Custom-built websites designed for speed, security, and seamless usability. We’ll handle
+          the tech, so you can focus on growing your business.
+        </Text>
+        {/* <Button className={`${classes.card} ${classes.callToAction}`}>Call Today</Button> */}
+        <SimpleGrid className={classes.grid} cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
+          {features}
+        </SimpleGrid>
+      </Container>
     </Container>
   );
 }

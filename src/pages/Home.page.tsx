@@ -1,3 +1,4 @@
+import EmailModal from '@/components/EmailModal/EmailModal';
 import { FeaturesCards } from '@/components/featuresCards/FeaturesCards';
 import { TestUnder } from '@/components/featuresCards/testUnder';
 import { HeaderMegaMenu } from '@/components/HeaderMegaMenu.tsx/HeaderMegaMenu';
