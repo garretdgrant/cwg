@@ -1,4 +1,5 @@
 import '@mantine/core/styles.css';
+import './globals.css';
 
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { Router } from './Router';
@@ -7,8 +8,8 @@ import { theme } from './theme';
 export default function App() {
   return (
     <>
-      <ColorSchemeScript defaultColorScheme="auto" />
-      <MantineProvider defaultColorScheme="auto" theme={theme}>
+      <ColorSchemeScript defaultColorScheme="dark" />
+      <MantineProvider defaultColorScheme="dark" theme={theme}>
         <Router />
       </MantineProvider>
     </>

@@ -5,7 +5,6 @@ import {
   IconGauge,
   IconLocation,
   IconTimeline,
-  IconUser,
   IconUserCode,
 } from '@tabler/icons-react';
 import {
@@ -97,7 +96,6 @@ export function FeaturesCards() {
           Custom-built websites designed for speed, security, and seamless usability. We’ll handle
           the tech, so you can focus on growing your business.
         </Text>
-        {/* <Button className={`${classes.card} ${classes.callToAction}`}>Call Today</Button> */}
         <SimpleGrid className={classes.grid} cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
           {features}
         </SimpleGrid>

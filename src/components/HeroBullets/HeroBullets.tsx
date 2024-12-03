@@ -1,9 +1,12 @@
 import { IconCheck } from '@tabler/icons-react';
+import { useNavigate } from 'react-router-dom';
 import { Button, Container, Group, Image, List, Text, ThemeIcon, Title } from '@mantine/core';
+import EmailModal from '../EmailModal/EmailModal';
 import image from './image.svg';
 import classes from './HeroBullets.module.css';
 
 export function HeroBullets() {
+  const navigate = useNavigate();
   return (
     <Container size="xl" className={classes.outterContainer}>
       <Container className={classes.container} size="md">
@@ -48,12 +51,15 @@ export function HeroBullets() {
             </List>
 
             <Group mt={30}>
-              <Button radius="xl" size="md" className={classes.control}>
+              <Button
+                onClick={() => navigate('/contact')}
+                radius="xl"
+                size="md"
+                className={classes.control}
+              >
                 Get started
               </Button>
-              <Button variant="default" radius="xl" size="md" className={classes.control}>
-                Source code
-              </Button>
+              <EmailModal />
             </Group>
           </div>
           <Image src={image} className={classes.image} />

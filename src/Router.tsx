@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import HeaderLayout from './components/HeaderMegaMenu.tsx/Layout';
+import HeaderLayout from './components/HeaderMegaMenu.tsx/HeaderLayot';
 import { NotFoundImage } from './components/NotFoundImage/NotFoundImage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';

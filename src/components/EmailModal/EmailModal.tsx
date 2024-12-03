@@ -53,10 +53,12 @@ function EmailModal() {
             </Text>
 
             {}
-            <form onSubmit={form.onSubmit((e) => {
-                console.log('Submitted the form bitches')
-                console.log(JSON.stringify(e))
-            })}>
+            <form
+              onSubmit={form.onSubmit((e) => {
+                console.log('Submitted the form bitches');
+                console.log(JSON.stringify(e));
+              })}
+            >
               <Stack>
                 <TextInput
                   label="Name"
@@ -76,11 +78,11 @@ function EmailModal() {
                   radius="md"
                 />
 
-                  <Checkbox
-                    label="I accept terms and conditions"
-                    checked={form.values.terms}
-                    onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
-                  />
+                <Checkbox
+                  label="I accept terms and conditions"
+                  checked={form.values.terms}
+                  onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
+                />
               </Stack>
 
               <Group justify="space-around" mt="xl">
