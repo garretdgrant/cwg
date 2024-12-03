@@ -1,6 +1,7 @@
 import { IconApps, IconBook, IconChevronDown, IconCode, IconCoin } from '@tabler/icons-react';
 import { NavLink, To, useNavigate } from 'react-router-dom';
 import {
+  ActionIcon,
   Anchor,
   Box,
   Burger,
@@ -11,19 +12,18 @@ import {
   Drawer,
   Group,
   HoverCard,
+  Image,
   ScrollArea,
   SimpleGrid,
   Text,
   ThemeIcon,
   UnstyledButton,
   useMantineTheme,
-  ActionIcon,
-  Image
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import logo from '@/favicon.svg';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import classes from './HeaderMegaMenu.module.css';
-import logo from '@/favicon.svg'
 
 const servicesData = [
   {
@@ -84,9 +84,11 @@ export function HeaderMegaMenu() {
     <Box pb={0}>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
-        {/* <ActionIcon size={'xl'} bg={'none'}>
-            <Image src={logo} />
-          </ActionIcon> */}
+          <Group onClick={() => navigate('/')}>
+            <ActionIcon size={'xl'} bg={'none'}>
+              <Image src={logo} />
+            </ActionIcon>
+          </Group>
 
           <Group h="100%" gap={0} visibleFrom="md">
             <NavLink style={navLinkStyleReset} to="/" className={classes.link}>
