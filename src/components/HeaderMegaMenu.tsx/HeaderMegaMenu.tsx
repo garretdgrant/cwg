@@ -1,4 +1,4 @@
-import { IconApps, IconBook, IconChevronDown, IconCode, IconCoin } from '@tabler/icons-react';
+import { IconApps, IconBook, IconChevronDown, IconCode } from '@tabler/icons-react';
 import { NavLink, To, useNavigate } from 'react-router-dom';
 import {
   ActionIcon,
@@ -84,10 +84,11 @@ export function HeaderMegaMenu() {
     <Box pb={0}>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
-          <Group onClick={() => navigate('/')}>
-            <ActionIcon size={'xl'} bg={'none'}>
+          <Group style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>
+            <ActionIcon size="xl" bg="none">
               <Image src={logo} />
             </ActionIcon>
+            <Text visibleFrom="lg">El Dorado Web Design</Text>
           </Group>
 
           <Group h="100%" gap={0} visibleFrom="md">
@@ -149,7 +150,7 @@ export function HeaderMegaMenu() {
             </NavLink>
           </Group>
 
-          <Group maw={''}>
+          <Group maw="">
             <ColorSchemeToggle />
             <Button onClick={() => navigate('/contact')} visibleFrom="md">
               Get Started
@@ -171,9 +172,9 @@ export function HeaderMegaMenu() {
         <ScrollArea h="calc(100vh - 80px" mx="-md">
           <Divider my="sm" />
 
-          <a onClick={() => drawerClick('/')} className={classes.link}>
+          <Text onClick={() => drawerClick('/')} className={classes.link}>
             Home
-          </a>
+          </Text>
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
@@ -183,12 +184,12 @@ export function HeaderMegaMenu() {
             </Center>
           </UnstyledButton>
           <Collapse in={linksOpened}>{links}</Collapse>
-          <a onClick={() => drawerClick('/pricing')} className={classes.link}>
+          <Text onClick={() => drawerClick('/pricing')} className={classes.link}>
             Pricing
-          </a>
-          <a onClick={() => drawerClick('/contact')} className={classes.link}>
+          </Text>
+          <Text onClick={() => drawerClick('/contact')} className={classes.link}>
             Contact
-          </a>
+          </Text>
 
           <Divider my="sm" />
 

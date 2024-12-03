@@ -16,7 +16,7 @@ import classes from './GetInTouch.module.css';
 export function GetInTouch() {
   return (
     <Container className={classes.outter}>
-      <Image className={classes.pattern} src={pattern} pos={'absolute'} w={'100%'} />
+      <Image className={classes.pattern} src={pattern} pos="absolute" w="100%" />
       <Paper shadow="xl" radius="lg">
         <div className={classes.wrapper}>
           <div className={classes.contacts} style={{ position: 'relative' }}>

@@ -1,23 +1,12 @@
 import {
   IconBrandAws,
-  IconCookie,
   IconDeviceIpadCheck,
   IconGauge,
   IconLocation,
   IconTimeline,
   IconUserCode,
 } from '@tabler/icons-react';
-import {
-  Button,
-  Card,
-  Container,
-  Group,
-  Image,
-  SimpleGrid,
-  Text,
-  Title,
-  useMantineTheme,
-} from '@mantine/core';
+import { Card, Container, Image, SimpleGrid, Text, Title, useMantineTheme } from '@mantine/core';
 import rain from './rect.svg';
 import classes from './FeaturesCards.module.css';
 

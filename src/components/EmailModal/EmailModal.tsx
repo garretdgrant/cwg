@@ -1,27 +1,21 @@
 import {
-  Anchor,
   Button,
   Checkbox,
-  Divider,
   Group,
   Image,
   Modal,
-  Paper,
-  PaperProps,
-  PasswordInput,
   Stack,
   Text,
   TextInput,
   Title,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { upperFirst, useDisclosure, useToggle } from '@mantine/hooks';
+import { useDisclosure } from '@mantine/hooks';
 import image from './image.svg';
 import classes from './EmailModal.module.css';
 
 function EmailModal() {
   const [opened, { open, close }] = useDisclosure(false);
-  const [type, toggle] = useToggle(['login', 'register']);
   const form = useForm({
     initialValues: {
       email: '',
@@ -37,7 +31,7 @@ function EmailModal() {
 
   return (
     <>
-      <Modal size={'auto'} opened={opened} onClose={close}>
+      <Modal size="auto" opened={opened} onClose={close}>
         {/* Modal content */}
         <div className={classes.wrapper}>
           <div className={classes.body}>

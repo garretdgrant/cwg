@@ -2,11 +2,12 @@
   position: relative;
   padding-top: 180px;
   padding-bottom: 130px;
-  background-image: url(https://images.unsplash.com/photo-1573164713988-8665fc963095?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=980&q=80);
+  background-image: url('https://images.unsplash.com/photo-1573164713988-8665fc963095?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=980&q=80');
   background-size: cover;
   background-position: center;
   height: calc(100vh - 60px);
   background-color: aliceblue;
+
   @media (max-width: $mantine-breakpoint-xs) {
     padding-top: 80px;
     padding-bottom: 50px;
@@ -27,9 +28,7 @@
   color: var(--mantine-color-white);
   margin-bottom: var(--mantine-spacing-xs);
   text-align: center;
-  font-family:
-    Greycliff CF,
-    var(--mantine-font-family);
+  font-family: 'Greycliff CF', var(--mantine-font-family);
 
   @media (max-width: $mantine-breakpoint-xs) {
     font-size: 28px;

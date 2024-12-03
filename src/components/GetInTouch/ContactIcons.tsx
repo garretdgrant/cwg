@@ -34,7 +34,7 @@ const MOCKDATA = [
 export function ContactIconsList() {
   const items = MOCKDATA.map((item, index) => <ContactIcon key={index} {...item} />);
   return (
-    <Stack display={'flex'} justify={'space-around'}>
+    <Stack display="flex" justify="space-around">
       {items}
     </Stack>
   );
