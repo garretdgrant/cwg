@@ -20,7 +20,7 @@ const featureData = [
     icon: IconGauge,
   },
   {
-    title: 'Mobile First Design',
+    title: 'Monthly Plan',
     description:
       'Your website will look stunning and function perfectly on any device, ensuring a seamless experience for mobile, tablet, and desktop users.',
     icon: IconDeviceIpadCheck,
