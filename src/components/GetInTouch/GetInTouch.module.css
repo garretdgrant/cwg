@@ -84,3 +84,22 @@
 .background {
   z-index: -1;
 }
+
+.outter {
+  max-width: 100vw;
+  position: relative;
+  height: 92vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.pattern {
+  z-index: -1;
+  width: 100vw;
+  height: 100%;
+  bottom: 0;
+  object-fit: cover;
+}
+

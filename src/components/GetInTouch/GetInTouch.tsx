@@ -1,12 +1,13 @@
-import { Button, Container, Group, Paper, SimpleGrid, Text, Textarea, TextInput } from '@mantine/core';
-import bg from './bg.svg';
+import { Button, Container, Group, Paper, Image, SimpleGrid, Text, Textarea, TextInput } from '@mantine/core';
 import { ContactIconsList } from './ContactIcons';
 import classes from './GetInTouch.module.css';
+import pattern from './polygon.svg'
 
 export function GetInTouch() {
   return (
-    <Container h={'80vh'} display={'flex'} style={{alignItems: 'center', justifyContent: 'center'}} >
-    <Paper shadow="md" radius="lg">
+    <Container className={classes.outter}  >
+    <Image className={classes.pattern} src={pattern}  pos={'absolute'} w={'100%'} />
+    <Paper shadow="xl" radius="lg">
       <div className={classes.wrapper}>
         <div className={classes.contacts} style={{position: 'relative' }}>
           <Text fz="lg" fw={700} className={classes.title} c="#fff">
@@ -18,7 +19,7 @@ export function GetInTouch() {
 
         <form className={classes.form} onSubmit={(event) => event.preventDefault()}>
           <Text fz="lg" fw={700} className={classes.title}>
-            Get in touch
+            Let’s Build Something Amazing Together!
           </Text>
 
           <div className={classes.fields}>
