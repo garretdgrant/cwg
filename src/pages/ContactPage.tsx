@@ -1,7 +1,10 @@
-import { HeroImageBackground } from '@/components/HeroImageBackground/HeroImageBackground';
-
+import { GetInTouch } from '@/components/GetInTouch/GetInTouch';
 function ContactPage() {
-  return <HeroImageBackground />;
+  return (
+    <>
+      <GetInTouch />
+    </>
+  );
 }
 
 export default ContactPage;

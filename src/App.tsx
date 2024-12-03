@@ -1,5 +1,5 @@
 import '@mantine/core/styles.css';
-import './globals.css'
+import './globals.css';
 
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { Router } from './Router';

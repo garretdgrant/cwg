@@ -20,11 +20,11 @@ select {
   text-transform: none;
 }
 
-:root[data-mantine-color-scheme="light"] body {
+:root[data-mantine-color-scheme='light'] body {
   --mantine-color-body: var(--mantine-color-gray-0);
 }
 
 /* For dark mode */
-:root[data-mantine-color-scheme="dark"] body {
+:root[data-mantine-color-scheme='dark'] body {
   --mantine-color-body: #282827;
 }
