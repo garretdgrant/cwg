@@ -1,4 +1,5 @@
 import { GetInTouch } from '@/components/GetInTouch/GetInTouch';
+
 function ContactPage() {
   return (
     <>

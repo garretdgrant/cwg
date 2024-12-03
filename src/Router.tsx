@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import HeaderLayout from './components/HeaderMegaMenu.tsx/Layout';
 import { NotFoundImage } from './components/NotFoundImage/NotFoundImage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
@@ -9,7 +8,7 @@ import SeoPage from './pages/SeoPage';
 import ServicesPage from './pages/ServicesPage';
 import WebAppPage from './pages/WebAppPage';
 import WebDesignPage from './pages/WebDesignPage';
-
+import HeaderLayout from './components/HeaderMegaMenu.tsx/HeaderLayot';
 const router = createBrowserRouter([
   {
     path: '/',

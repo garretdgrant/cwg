@@ -76,10 +76,26 @@
 }
 
 .valueBadge {
+  background: linear-gradient(90deg, #6a5af9, #32d3fd); /* Modern gradient */
+  color: white; /* Clean and readable */
+  font-weight: bold;
+  font-size: 0.85rem; /* Slightly smaller for subtlety */
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  border-radius: 16px; /* Rounded for a tag-like feel */
   position: absolute;
-  padding: 5px;
-    top: 0;
-    right: 2rem;
-    background-color: red;
-    font-weight: bolder;
+  top: 1rem;
+  right: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  animation: glow 3s infinite; /* Optional: Subtle glowing effect */
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 8px rgba(101, 157, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(101, 157, 255, 1);
+  }
 }

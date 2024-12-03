@@ -39,9 +39,11 @@ const featureData = [
   },
 ];
 
-const valueBadge = <Flex className={classes.valueBadge}  >
-  <Text className={''}>Most Popular!</Text>
-</Flex>
+const valueBadge = (
+  <Flex className={classes.valueBadge}>
+    <Text className={''}>Most Popular!</Text>
+  </Flex>
+);
 
 export function PricingCards() {
   const theme = useMantineTheme();
@@ -54,15 +56,14 @@ export function PricingCards() {
         </Text>
         <Flex direction={'column'}>
           {feature.services.map((service) => {
-
             return (
-            <Flex direction={'row'} align={'center'} justify={'space-between'}>
-              <Text className={classes.description}>{service}</Text>
-              <IconCheck color="green" stroke={2} size={20} />
-              {index === 1 ? valueBadge : null}
-            </Flex>
-          )}
-          )}
+              <Flex direction={'row'} align={'center'} justify={'space-between'}>
+                <Text className={classes.description}>{service}</Text>
+                <IconCheck color="green" stroke={2} size={20} />
+                {index === 1 ? valueBadge : null}
+              </Flex>
+            );
+          })}
         </Flex>
       </Card>
     );

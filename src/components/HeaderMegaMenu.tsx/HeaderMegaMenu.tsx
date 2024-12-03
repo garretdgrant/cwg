@@ -17,11 +17,13 @@ import {
   ThemeIcon,
   UnstyledButton,
   useMantineTheme,
+  ActionIcon,
+  Image
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
-import EmailModal from '../EmailModal/EmailModal';
 import classes from './HeaderMegaMenu.module.css';
+import logo from '@/favicon.svg'
 
 const servicesData = [
   {
@@ -82,9 +84,9 @@ export function HeaderMegaMenu() {
     <Box pb={0}>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
-          <Text fw={700} size="xl">
-            CWG
-          </Text>
+        {/* <ActionIcon size={'xl'} bg={'none'}>
+            <Image src={logo} />
+          </ActionIcon> */}
 
           <Group h="100%" gap={0} visibleFrom="md">
             <NavLink style={navLinkStyleReset} to="/" className={classes.link}>
@@ -147,8 +149,9 @@ export function HeaderMegaMenu() {
 
           <Group maw={''}>
             <ColorSchemeToggle />
-            <EmailModal />
-            <Button visibleFrom="sm">Get Started</Button>
+            <Button onClick={() => navigate('/contact')} visibleFrom="md">
+              Get Started
+            </Button>
             <Burger hiddenFrom="md" opened={drawerOpened} onClick={toggleDrawer} />
           </Group>
         </Group>
