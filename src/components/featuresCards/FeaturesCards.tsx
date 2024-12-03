@@ -5,7 +5,6 @@ import {
   IconGauge,
   IconLocation,
   IconTimeline,
-  IconUser,
   IconUserCode,
 } from '@tabler/icons-react';
 import {
