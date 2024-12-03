@@ -1,7 +1,8 @@
 import { FeaturesCards } from '@/components/FeaturesCards/FeaturesCards';
-import { FooterSocial } from '@/components/FooterSocial/FooterSocial';
 import { HeroBullets } from '@/components/HeroBullets/HeroBullets';
-
+import { FooterSocial
+  
+ } from '@/components/FooterSocial/FooterSocial';
 function HomePage() {
   return (
     <>
