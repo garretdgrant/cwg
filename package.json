@@ -15,10 +15,9 @@
     "prettier:write": "prettier --write \"**/*.{ts,tsx,css}\"",
     "vitest": "vitest run",
     "vitest:watch": "vitest",
-    "test": "npm run typecheck && npm run prettier && npm run lint && npm run vitest && npm run build",
+    "test": "pnpm run typecheck && pnpm run prettier && pnpm run lint && pnpm run build",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build",
-    "ui:copy": "sh -c 'cp -r ../ui.mantine.dev/lib/$1 ./src/components/$1'"
+    "storybook:build": "storybook build"
   },
   "dependencies": {
     "@mantine/core": "7.14.3",

@@ -20,9 +20,8 @@ jobs:
           cache: 'pnpm'
           cache-dependency-path: '**/pnpm-lock.lock'
       - name: Install pnpm cause its better than the templat
+        run: npm i -g pnpm
       - name: Install dependencies
         run: pnpm install
-      - name: Run build
-        run: pnpm build
-      # - name: Run tests
-      #   run: npm test
+      - name: Run tests
+        run: pnpm test

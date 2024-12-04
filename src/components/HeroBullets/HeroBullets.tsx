@@ -53,7 +53,7 @@ export function HeroBullets() {
             <Group mt={30}>
               <Button
                 onClick={() => navigate('/contact')}
-                radius="xl"
+                radius="sm"
                 size="md"
                 className={classes.control}
               >

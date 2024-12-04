@@ -1,4 +1,4 @@
-import { Button, Container, Text, Title } from '@mantine/core';
+import { Container, Text, Title } from '@mantine/core';
 import { Dots } from './Dots';
 import classes from './PricingHeader.module.css';
 

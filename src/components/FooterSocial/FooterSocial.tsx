@@ -1,14 +1,16 @@
 import { IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from '@tabler/icons-react';
 import { ActionIcon, Container, Group, Image, Text } from '@mantine/core';
 import logo from '@/favicon.svg';
+import { useNavigateToTop } from '@/hooks/useNavigateToTop';
 import classes from './FooterSocial.module.css';
 
 export function FooterSocial() {
+  const navigate = useNavigateToTop();
   return (
     <div className={classes.footer}>
       <Container className={classes.inner}>
-        <Group>
-          <ActionIcon size={'xl'} bg={'none'}>
+        <Group onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+          <ActionIcon size="xl" bg="none">
             <Image src={logo} />
           </ActionIcon>
           <Text>El Dorado Web Design</Text>

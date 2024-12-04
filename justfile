@@ -1,11 +1,15 @@
-ui-copy target:
+ui-copy from target:
   #!/bin/bash
   if [ -z "{{target}}" ]; then
-    echo "Error: Please provide the directory to copy as an argument."
+    echo "Error: Please provide the target directory."
     exit 1
   fi
-  cp -r "../ui.mantine.dev/lib/{{target}}" "./src/components/"
-  echo "Copied ../ui.mantine.dev/lib/{{target}} to ./src/components/{{target}}"
+  if [ -z "{{from}}" ]; then
+    echo "Error: Please provide the from directory."
+    exit 1
+  fi
+  cp -r "../ui.mantine.dev/lib/{{from}}" "./src/components/{{target}}"
+  echo "Copied ../ui.mantine.dev/lib/{{from}} to ./src/components/{{target}}"
 
 component component_name:
   #!/bin/bash

@@ -1,22 +1,5 @@
-import {
-  IconBrandAws,
-  IconCheck,
-  IconCookie,
-  IconDeviceIpadCheck,
-  IconGauge,
-} from '@tabler/icons-react';
-import {
-  Button,
-  Card,
-  Container,
-  Flex,
-  Group,
-  SimpleGrid,
-  Text,
-  useMantineColorScheme,
-  useMantineTheme,
-} from '@mantine/core';
-import { useColorScheme } from '@mantine/hooks';
+import { IconBrandAws, IconCheck, IconDeviceIpadCheck, IconGauge } from '@tabler/icons-react';
+import { Card, Container, Flex, SimpleGrid, Text, useMantineTheme } from '@mantine/core';
 import classes from './PricingCards.module.css';
 
 const services = ['service', 'service', 'service'];
@@ -24,24 +7,24 @@ const services = ['service', 'service', 'service'];
 const featureData = [
   {
     title: 'All in Bundle',
-    services: services,
+    services,
     icon: IconGauge,
   },
   {
     title: 'Monthly Plan',
-    services: services,
+    services,
     icon: IconDeviceIpadCheck,
   },
   {
     title: 'Custom Web App',
-    services: services,
+    services,
     icon: IconBrandAws,
   },
 ];
 
 const valueBadge = (
   <Flex className={classes.valueBadge}>
-    <Text className={''}>Most Popular!</Text>
+    <Text className="">Most Popular!</Text>
   </Flex>
 );
 
@@ -54,10 +37,10 @@ export function PricingCards() {
         <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
           {feature.title}
         </Text>
-        <Flex direction={'column'}>
+        <Flex direction="column">
           {feature.services.map((service) => {
             return (
-              <Flex direction={'row'} align={'center'} justify={'space-between'}>
+              <Flex direction="row" align="center" justify="space-between">
                 <Text className={classes.description}>{service}</Text>
                 <IconCheck color="green" stroke={2} size={20} />
                 {index === 1 ? valueBadge : null}
