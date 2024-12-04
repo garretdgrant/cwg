@@ -175,6 +175,10 @@ export function HeaderMegaMenu() {
           <Text onClick={() => drawerClick('/')} className={classes.link}>
             Home
           </Text>
+
+          <Text onClick={() => drawerClick('/about')} className={classes.link}>
+            About
+          </Text>
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>

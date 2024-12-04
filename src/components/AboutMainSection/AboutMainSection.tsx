@@ -1,5 +1,6 @@
 import { IconCheck } from '@tabler/icons-react';
 import { Button, Container, Group, Image, List, Text, ThemeIcon, Title } from '@mantine/core';
+import HStackImages from '../HStackImages/HStackImages';
 import garret from './garret.png';
 import tahoe from './lake-tahoe-winter.jpg';
 import classes from './AboutMainSection.module.css';
@@ -50,13 +51,7 @@ export function AboutMainSection() {
             </Button>
           </Group>
         </div>
-        <Container className={classes.imageContainer}>
-            <Container pos={'relative'} className={classes.garretWrapper} >
-
-              <Image src={garret} className={classes.garret}  />
-            </Container>
-            <Image src={tahoe} className={classes.tahoe} />
-        </Container>
+        <HStackImages imageLeft={garret} imageRight={tahoe} />
       </div>
     </Container>
   );
