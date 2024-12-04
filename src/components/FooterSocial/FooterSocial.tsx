@@ -1,5 +1,4 @@
 import { IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from '@tabler/icons-react';
-import { useNavigate } from 'react-router-dom';
 import { ActionIcon, Container, Group, Image, Text } from '@mantine/core';
 import logo from '@/favicon.svg';
 import { useNavigateToTop } from '@/hooks/useNavigateToTop';
