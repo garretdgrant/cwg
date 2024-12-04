@@ -1,18 +1,18 @@
 import { Container, Image, Text } from '@mantine/core';
 import image from './abstract-banner.svg';
+import classes from './AboutHeader.module.css';
 
 function AboutHeader() {
   return (
     <Container
       pos={'relative'}
       display={'flex'}
-      style={{ margin: 0, padding: 0, justifyContent: 'center', alignItems: 'center' }}
+      style={{ margin: 0, paddingTop: '1rem', justifyContent: 'center', alignItems: 'center' }}
       size={'sm'}
       miw={'100%'}
-      mih={'10vw'}
-      bg={'blue'}
     >
-      <Text>About Us</Text>
+      <Text className={classes.title}>ABOUT US</Text>
+      <Image className={classes.image} src={image} />
     </Container>
   );
 }
