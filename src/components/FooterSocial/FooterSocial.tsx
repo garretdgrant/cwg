@@ -2,12 +2,11 @@ import { IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from '@tabler/
 import { useNavigate } from 'react-router-dom';
 import { ActionIcon, Container, Group, Image, Text } from '@mantine/core';
 import logo from '@/favicon.svg';
-import classes from './FooterSocial.module.css';
 import { useNavigateToTop } from '@/hooks/useNavigateToTop';
-
+import classes from './FooterSocial.module.css';
 
 export function FooterSocial() {
-  const navigate = useNavigateToTop()
+  const navigate = useNavigateToTop();
   return (
     <div className={classes.footer}>
       <Container className={classes.inner}>

@@ -1,30 +1,21 @@
 import { IconCheck } from '@tabler/icons-react';
-import {
-  Button,
-  Container,
-  Divider,
-  Group,
-  Box,
-  Paper,
-  Text,
-  Title,
-} from '@mantine/core';
+import { Box, Button, Container, Divider, Group, Paper, Text, Title } from '@mantine/core';
+import { useNavigateToTop } from '@/hooks/useNavigateToTop';
 import HStackImages from '../HStackImages/HStackImages';
 import garret from './garret.png';
 import tahoe from './lake-tahoe-winter.jpg';
 import classes from './AboutMainSection.module.css';
-import { useNavigateToTop } from '@/hooks/useNavigateToTop';
 
 export function AboutMainSection() {
-  const navigate = useNavigateToTop()
+  const navigate = useNavigateToTop();
   return (
     <Container className={classes.outter}>
       <Box className={classes.title}>
-      <Title>Empowering Businesses</Title>
-      <Title>with Affordable</Title>
-      <Title>
-        <span className={classes.highlight}>High-Quality</span> Websites
-      </Title>
+        <Title>Empowering Businesses</Title>
+        <Title>with Affordable</Title>
+        <Title>
+          <span className={classes.highlight}>High-Quality</span> Websites
+        </Title>
       </Box>
       <div className={classes.inner}>
         <div className={classes.content}>
@@ -60,10 +51,16 @@ export function AboutMainSection() {
         </div>
         <HStackImages imageLeft={garret} imageRight={tahoe} />
       </div>
-      <Group display={'flex'} justify='center'>
-            <Button onClick={() => navigate('/contact')} variant='gradient' radius="sm" size="xl" className={classes.control}>
-              Get started
-            </Button>
+      <Group display={'flex'} justify="center">
+        <Button
+          onClick={() => navigate('/contact')}
+          variant="gradient"
+          radius="sm"
+          size="xl"
+          className={classes.control}
+        >
+          Get started
+        </Button>
       </Group>
     </Container>
   );
