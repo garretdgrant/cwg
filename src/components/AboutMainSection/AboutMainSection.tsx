@@ -57,15 +57,14 @@ export function AboutMainSection() {
               level.
             </Text>
           </Paper>
-
-          <Group display={'flex'} justify='center' mt={30}>
-            <Button onClick={() => navigate('/contact')} variant='gradient' radius="sm" size="xl" className={classes.control}>
-              Get started
-            </Button>
-          </Group>
         </div>
         <HStackImages imageLeft={garret} imageRight={tahoe} />
       </div>
+      <Group display={'flex'} justify='center'>
+            <Button onClick={() => navigate('/contact')} variant='gradient' radius="sm" size="xl" className={classes.control}>
+              Get started
+            </Button>
+      </Group>
     </Container>
   );
 }
