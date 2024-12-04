@@ -18,6 +18,8 @@
   height: 80%;
   border-radius: 2rem;
   z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a soft shadow */
+
 }
 
 .imageRight {
@@ -25,6 +27,8 @@
   height: 85vh;
   border-radius: 2rem;
   object-fit: cover;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow for emphasis */
+
   @media (max-width: $mantine-breakpoint-md) {
     max-width: 60vw;
     max-height: 50vh;

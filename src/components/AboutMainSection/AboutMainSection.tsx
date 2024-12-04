@@ -7,15 +7,16 @@ import {
   Box,
   Paper,
   Text,
-  ThemeIcon,
   Title,
 } from '@mantine/core';
 import HStackImages from '../HStackImages/HStackImages';
 import garret from './garret.png';
 import tahoe from './lake-tahoe-winter.jpg';
 import classes from './AboutMainSection.module.css';
+import { useNavigateToTop } from '@/hooks/useNavigateToTop';
 
 export function AboutMainSection() {
+  const navigate = useNavigateToTop()
   return (
     <Container className={classes.outter}>
       <Box className={classes.title}>
@@ -57,12 +58,9 @@ export function AboutMainSection() {
             </Text>
           </Paper>
 
-          <Group mt={30}>
-            <Button radius="xl" size="md" className={classes.control}>
+          <Group display={'flex'} justify='center' mt={30}>
+            <Button onClick={() => navigate('/contact')} variant='gradient' radius="sm" size="xl" className={classes.control}>
               Get started
-            </Button>
-            <Button variant="default" radius="xl" size="md" className={classes.control}>
-              Source code
             </Button>
           </Group>
         </div>
