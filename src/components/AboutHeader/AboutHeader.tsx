@@ -6,10 +6,11 @@ function AboutHeader() {
     <Container
       pos={'relative'}
       display={'flex'}
-      style={{ margin: 0, padding: 0, justifyContent: 'center', alignItems: 'center'}}
+      style={{ margin: 0, padding: 0, justifyContent: 'center', alignItems: 'center' }}
       size={'sm'}
       miw={'100%'}
       mih={'10vw'}
+      bg={'blue'}
     >
       <Text>About Us</Text>
     </Container>
