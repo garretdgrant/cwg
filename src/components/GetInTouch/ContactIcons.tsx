@@ -27,8 +27,8 @@ function ContactIcon({ icon: Icon, title, description, ...others }: ContactIconP
 
 const MOCKDATA = [
   { title: 'Email', description: 'garret.grant.swe@gmail.com', icon: IconAt },
-  { title: 'Call/Text', description: '(530) 391-7473', icon: IconPhone },
-  { title: 'Working hours', description: '9 a.m. – 6 p.m.', icon: IconSun },
+  { title: 'Shoot me a Text', description: '(530) 391-7473', icon: IconPhone },
+  { title: 'Working hours', description: '9 a.m. – 6 p.m. PST', icon: IconSun },
 ];
 
 export function ContactIconsList() {
