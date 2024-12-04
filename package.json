@@ -17,8 +17,7 @@
     "vitest:watch": "vitest",
     "test": "pnpm run typecheck && pnpm run prettier && pnpm run lint && pnpm run build",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build",
-    "ui:copy": "sh -c 'cp -r ../ui.mantine.dev/lib/$1 ./src/components/$1'"
+    "storybook:build": "storybook build"
   },
   "dependencies": {
     "@mantine/core": "7.14.3",
