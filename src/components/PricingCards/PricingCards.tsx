@@ -1,49 +1,85 @@
-import { IconBrandAws, IconCheck, IconDeviceIpadCheck, IconGauge } from '@tabler/icons-react';
-import { Card, Container, Flex, SimpleGrid, Text, useMantineTheme } from '@mantine/core';
+import { IconCalendar, IconCheck, IconDatabaseCog, IconPackages, IconX } from '@tabler/icons-react';
+import {
+  Button,
+  Card,
+  Container,
+  Divider,
+  Flex,
+  Group,
+  SimpleGrid,
+  Text,
+  useMantineTheme,
+} from '@mantine/core';
+import { useNavigateToTop } from '@/hooks/useNavigateToTop';
 import classes from './PricingCards.module.css';
 
-const services = ['service', 'service', 'service'];
+const services = [
+  { title: 'service', included: true },
+  { title: 'service', included: true },
+  { title: 'service', included: false },
+];
 
 const featureData = [
   {
     title: 'All in Bundle',
     services,
-    icon: IconGauge,
+    icon: IconPackages,
+    price: '$4000 one time'
   },
   {
     title: 'Monthly Plan',
     services,
-    icon: IconDeviceIpadCheck,
+    icon: IconCalendar,
+    price: '$200 per Month'
   },
   {
     title: 'Custom Web App',
     services,
-    icon: IconBrandAws,
+    icon: IconDatabaseCog,
+    price: 'Contact'
   },
 ];
 
-const valueBadge = (
-  <Flex className={classes.valueBadge}>
-    <Text className="">Most Popular!</Text>
-  </Flex>
-);
-
 export function PricingCards() {
   const theme = useMantineTheme();
+  const navigate = useNavigateToTop();
   const features = featureData.map((feature, index) => {
     return (
-      <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
-        <feature.icon size={50} stroke={2} color={theme.colors.blue[3]} />
-        <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
-          {feature.title}
-        </Text>
+      <Card
+        onClick={() => navigate('/contact')}
+        key={feature.title}
+        shadow="md"
+        radius="md"
+        className={classes.card}
+        padding="xl"
+      >
+        <Group display={'flex'} w={'100%'} justify="space-between">
+          <feature.icon size={50} stroke={2} color={theme.colors.blue[3]} />
+          {index === 1 ? (
+            <Button className={classes.valueBadge} size="lg" disabled>
+              BEST VALUE!
+            </Button>
+          ) : null}
+        </Group>
+        <Group display={'flex'} className={classes.titleContainer}>
+          <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
+            {feature.title}
+          </Text>
+          <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
+            {feature.price}
+          </Text>
+        </Group>
+        <Divider mb={'1rem'} />
         <Flex direction="column">
           {feature.services.map((service) => {
             return (
               <Flex direction="row" align="center" justify="space-between">
-                <Text className={classes.description}>{service}</Text>
-                <IconCheck color="green" stroke={2} size={20} />
-                {index === 1 ? valueBadge : null}
+                <Text className={classes.description}>{service.title}</Text>
+                {service.included ? (
+                  <IconCheck color="green" stroke={2} size={20} />
+                ) : (
+                  <IconX color="red" stroke={2} size={20} />
+                )}
               </Flex>
             );
           })}
@@ -53,7 +89,7 @@ export function PricingCards() {
   });
 
   return (
-    <Container size="lg" py="xl">
+    <Container className={classes.outter} size="lg" py="xl">
       <SimpleGrid className={classes.grid} cols={{ base: 1, md: 3 }} spacing="md" mt={2}>
         {features}
       </SimpleGrid>
