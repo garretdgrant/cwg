@@ -1,6 +1,7 @@
 import { IconCalendar, IconCheck, IconDatabaseCog, IconPackages, IconX } from '@tabler/icons-react';
 import {
   Button,
+  ButtonGroup,
   Card,
   Container,
   Divider,
@@ -13,30 +14,48 @@ import {
 import { useNavigateToTop } from '@/hooks/useNavigateToTop';
 import classes from './PricingCards.module.css';
 
-const services = [
-  { title: 'service', included: true },
-  { title: 'service', included: true },
-  { title: 'service', included: false },
+const basicServices = [
+  { title: 'Design and Development', included: true },
+  { title: '5 Pages Included', included: true },
 ];
+
+const allBundleServices = [
+  { title: 'Design and Development', included: false },
+  { title: '5 Pages Included', included: false },
+];
+
+const monthlyServices = [
+  { title: 'Design and Development', included: false },
+  { title: '5 Pages Included', included: false },
+];
+
+const webAppServices = [
+  { title: 'Design and Development', included: false },
+  { title: '5 Pages Included', included: false },
+];
+
 
 const featureData = [
   {
     title: 'All in Bundle',
-    services,
+    services: [...basicServices, ...allBundleServices],
     icon: IconPackages,
-    price: '$4000 one time'
+    pricing: {price: '$4000', type: '+$25/mo Hosting'},
+    button: <Button  size='lg'>Get Started</Button>
   },
   {
     title: 'Monthly Plan',
-    services,
+    services: [...basicServices, ...monthlyServices],
     icon: IconCalendar,
-    price: '$200 per Month'
+    pricing: {price: '$200', type: 'Per Month'},
+    button: <Button size='lg'>Get Started</Button>
   },
   {
     title: 'Custom Web App',
-    services,
+    services: [...basicServices, ...webAppServices],
     icon: IconDatabaseCog,
-    price: 'Contact'
+    pricing: {price: '$8k', type: 'Starting'},
+    button: <Button size='lg'>Get Started</Button>
   },
 ];
 
@@ -65,11 +84,8 @@ export function PricingCards() {
           <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
             {feature.title}
           </Text>
-          <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
-            {feature.price}
-          </Text>
         </Group>
-        <Divider mb={'1rem'} />
+        <Divider my={'lg'} mx={'md'} />
         <Flex direction="column">
           {feature.services.map((service) => {
             return (
@@ -84,6 +100,18 @@ export function PricingCards() {
             );
           })}
         </Flex>
+        <Divider mt={'lg'} mb={'lg'} />
+        <Group justify='flex-start' gap={'xs'} p={'xs'} >
+          <Text fw={500} className={classes.cardTitle} >
+            {feature.pricing.price}
+          </Text>
+          <Text className={classes.cardPrice}>
+            {feature.pricing.type}
+          </Text>
+        </Group>
+        <Group justify='center'>
+          {feature.button}
+        </Group>
       </Card>
     );
   });

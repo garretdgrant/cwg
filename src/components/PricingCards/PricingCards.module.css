@@ -4,7 +4,7 @@
   cursor: pointer;
   transition: ease-in-out 0.2s;
   background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-gray-9)) !important;
-  height: 400px;
+  height: 450px;
   width: 300px;
   padding: 16px;
   box-shadow:
@@ -22,8 +22,6 @@
     height: 400px;
   }
 }
-
-
 
 .grid {
   display: flex;
@@ -71,6 +69,16 @@
   flex-direction: row;
   justify-content: space-between;
   margin-top: 1rem;
+}
+
+.cardTitle {
+  font-size: var(--mantine-h2-font-size);
+  align-self: start;
+}
+
+.cardPrice {
+  font-size: var(--mantine-font-size-sm);
+  align-self: end;
 }
 
 @keyframes glow {
