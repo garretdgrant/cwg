@@ -9,7 +9,7 @@ export function FooterSocial() {
   return (
     <div className={classes.footer}>
       <Container className={classes.inner}>
-        <Group onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+        <Group onClick={() => navigate('/', 'smooth')} style={{ cursor: 'pointer' }}>
           <ActionIcon size="xl" bg="none">
             <Image src={logo} />
           </ActionIcon>

@@ -34,28 +34,33 @@ const webAppServices = [
   { title: '5 Pages Included', included: false },
 ];
 
+const ctaButton = (
+  <Button size="md" variant="outline">
+    Get Started
+  </Button>
+);
 
 const featureData = [
   {
     title: 'All in Bundle',
     services: [...basicServices, ...allBundleServices],
     icon: IconPackages,
-    pricing: {price: '$4000', type: '+$25/mo Hosting'},
-    button: <Button  size='lg'>Get Started</Button>
+    pricing: { price: '$4000', type: '+$25/mo Hosting' },
+    button: ctaButton,
   },
   {
     title: 'Monthly Plan',
     services: [...basicServices, ...monthlyServices],
     icon: IconCalendar,
-    pricing: {price: '$200', type: 'Per Month'},
-    button: <Button size='lg'>Get Started</Button>
+    pricing: { price: '$200', type: 'Per Month' },
+    button: ctaButton,
   },
   {
     title: 'Custom Web App',
     services: [...basicServices, ...webAppServices],
     icon: IconDatabaseCog,
-    pricing: {price: '$8k', type: 'Starting'},
-    button: <Button size='lg'>Get Started</Button>
+    pricing: { price: '$8k', type: 'Starting' },
+    button: ctaButton,
   },
 ];
 
@@ -65,12 +70,9 @@ export function PricingCards() {
   const features = featureData.map((feature, index) => {
     return (
       <Card
-        onClick={() => navigate('/contact')}
+        onClick={() => navigate('/contact', 'instant')}
         key={feature.title}
-        shadow="md"
-        radius="md"
         className={classes.card}
-        padding="xl"
       >
         <Group display={'flex'} w={'100%'} justify="space-between">
           <feature.icon size={50} stroke={2} color={theme.colors.blue[3]} />
@@ -101,15 +103,13 @@ export function PricingCards() {
           })}
         </Flex>
         <Divider mt={'lg'} mb={'lg'} />
-        <Group justify='flex-start' gap={'xs'} p={'xs'} >
-          <Text fw={500} className={classes.cardTitle} >
+        <Group justify="center" gap={'xs'} p={'xs'}>
+          <Text fw={500} className={classes.cardTitle}>
             {feature.pricing.price}
           </Text>
-          <Text className={classes.cardPrice}>
-            {feature.pricing.type}
-          </Text>
+          <Text className={classes.cardPrice}>{feature.pricing.type}</Text>
         </Group>
-        <Group justify='center'>
+        <Group className={classes.buttonContainer} justify="center">
           {feature.button}
         </Group>
       </Card>

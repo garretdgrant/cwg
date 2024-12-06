@@ -1,0 +1,13 @@
+.pageHeader {
+  text-align: center;
+  margin: 2rem; /* Add spacing below the title */
+}
+
+.pageTitle {
+  font-size: 2.5rem; /* Adjust size for prominence */
+  color: light-dark(
+    var(--mantine-color-dark-9),
+    var(--mantine-color-gray-0)
+  ); /* Use a contrasting color */
+  font-weight: bold;
+}

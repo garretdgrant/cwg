@@ -53,7 +53,7 @@ export function AboutMainSection() {
       </div>
       <Group display={'flex'} justify="center">
         <Button
-          onClick={() => navigate('/contact')}
+          onClick={() => navigate('/contact', 'instant')}
           variant="gradient"
           radius="sm"
           size="xl"
