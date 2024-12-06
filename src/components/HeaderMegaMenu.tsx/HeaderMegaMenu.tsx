@@ -24,25 +24,26 @@ import { useDisclosure } from '@mantine/hooks';
 import logo from '@/favicon.svg';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import classes from './HeaderMegaMenu.module.css';
+import { useNavigateToTop } from '@/hooks/useNavigateToTop';
 
 const servicesData = [
   {
     icon: IconCode,
     title: 'Web Design',
     description: `Beautiful, user-friendly websites tailored to your brand and goals.`,
-    to: 'web-design',
+    to: 'services',
   },
   {
     icon: IconApps,
     title: 'Full Web Applications',
     description: `Custom web apps built for performance, scalability, and your business needs.`,
-    to: 'web-app',
+    to: 'services',
   },
   {
     icon: IconBook,
     title: 'Seo',
     description: `Boost your visibility and rankings with proven SEO strategies.`,
-    to: 'seo',
+    to: 'services',
   },
 ];
 
@@ -55,7 +56,7 @@ export function HeaderMegaMenu() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const theme = useMantineTheme();
-  const navigate = useNavigate();
+  const navigate = useNavigateToTop();
 
   const links = servicesData.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
@@ -75,8 +76,8 @@ export function HeaderMegaMenu() {
     </UnstyledButton>
   ));
 
-  const drawerClick = (path: To) => {
-    navigate(path);
+  const drawerClick = (path: To, behavior: ScrollBehavior) => {
+    navigate(path, behavior);
     closeDrawer();
   };
 
@@ -84,7 +85,7 @@ export function HeaderMegaMenu() {
     <Box pb={0}>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
-          <Group style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>
+          <Group style={{ cursor: 'pointer' }} onClick={() => navigate('/', 'instant')}>
             <ActionIcon size="xl" bg="none">
               <Image src={logo} />
             </ActionIcon>
@@ -113,7 +114,7 @@ export function HeaderMegaMenu() {
               <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
                 <Group justify="space-between" px="md">
                   <Text fw={500}>Services</Text>
-                  <Anchor onClick={() => navigate('/services')} fz="xs">
+                  <Anchor onClick={() => navigate('/services', 'instant')} fz="xs">
                     View all
                   </Anchor>
                 </Group>
@@ -135,7 +136,7 @@ export function HeaderMegaMenu() {
                         life.
                       </Text>
                     </div>
-                    <Button onClick={() => navigate('/contact')} variant="default">
+                    <Button onClick={() => navigate('/contact', 'instant')} variant="default">
                       Get started
                     </Button>
                   </Group>
@@ -152,7 +153,7 @@ export function HeaderMegaMenu() {
 
           <Group maw="">
             <ColorSchemeToggle />
-            <Button onClick={() => navigate('/contact')} visibleFrom="md">
+            <Button onClick={() => navigate('/contact', 'instant')} visibleFrom="md">
               Get Started
             </Button>
             <Burger hiddenFrom="md" opened={drawerOpened} onClick={toggleDrawer} />
@@ -172,11 +173,11 @@ export function HeaderMegaMenu() {
         <ScrollArea h="calc(100vh - 80px" mx="-md">
           <Divider my="sm" />
 
-          <Text onClick={() => drawerClick('/')} className={classes.link}>
+          <Text onClick={() => drawerClick('/', 'instant')} className={classes.link}>
             Home
           </Text>
 
-          <Text onClick={() => drawerClick('/about')} className={classes.link}>
+          <Text onClick={() => drawerClick('/about', 'instant')} className={classes.link}>
             About
           </Text>
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
@@ -188,17 +189,17 @@ export function HeaderMegaMenu() {
             </Center>
           </UnstyledButton>
           <Collapse in={linksOpened}>{links}</Collapse>
-          <Text onClick={() => drawerClick('/pricing')} className={classes.link}>
+          <Text onClick={() => drawerClick('/pricing', 'instant')} className={classes.link}>
             Pricing
           </Text>
-          <Text onClick={() => drawerClick('/contact')} className={classes.link}>
+          <Text onClick={() => drawerClick('/contact', 'instant')} className={classes.link}>
             Contact
           </Text>
 
           <Divider my="sm" />
 
           <Group justify="center" grow pb="xl" px="md">
-            <Button onClick={() => drawerClick('/contact')}>Get Started</Button>
+            <Button onClick={() => drawerClick('/contact', 'instant')}>Get Started</Button>
           </Group>
         </ScrollArea>
       </Drawer>
