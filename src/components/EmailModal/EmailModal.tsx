@@ -1,7 +1,7 @@
 import { Button, Group, Image, Modal, Stack, Text, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useDisclosure } from '@mantine/hooks';
-import { notifications } from '@mantine/notifications';
+import { useCustomSubmit } from '@/hooks/useCustomSubmit';
 import image from './image.svg';
 import classes from './EmailModal.module.css';
 import notificationStyle from './notifications.module.css';
@@ -20,30 +20,7 @@ function EmailModal() {
       email: (val) => (/^\S+@\S+$/.test(val) ? null : 'Invalid email'),
     },
   });
-
-  const validatedSubmit = () => {
-    notifications.show({
-      color: 'green',
-      title: 'Message Sent',
-      message: 'Your message has been sent, we will contact you soon :)',
-      classNames: notificationStyle,
-      position: 'top-center',
-      pos: 'fixed',
-    });
-    form.reset();
-    close();
-  };
-
-  const errorSubmit = () => {
-    notifications.show({
-      color: 'red',
-      title: 'Message Failed',
-      message: 'Please correct errors and send again :(',
-      position: 'top-center',
-      classNames: notificationStyle,
-      pos: 'absolute',
-    });
-  };
+  const customSubmit = useCustomSubmit(form, notificationStyle);
 
   return (
     <>
@@ -68,7 +45,7 @@ function EmailModal() {
               method="POST" // Added for Netlify form submission
               data-netlify="true" // Enables Netlify Forms
               netlify-honeypot="bot-field" // Adds a honeypot field for spam prevention
-              onSubmit={form.onSubmit(validatedSubmit, errorSubmit)} // Kept your original onSubmit handler
+              onSubmit={customSubmit} // Kept your original onSubmit handler
             >
               {/* Hidden input for Netlify form name */}
               <input type="hidden" name="form-name" value="email-modal" />
