@@ -48,9 +48,9 @@ function EmailModal() {
 
             {}
             <form
-              onSubmit={form.onSubmit((e) => {
-                console.log('Submitted the form bitches');
-                console.log(JSON.stringify(e));
+              onSubmit={form.onSubmit((_e) => {
+                // NOOP
+                // TODO: Submit form to email
               })}
             >
               <Stack>

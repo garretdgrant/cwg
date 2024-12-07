@@ -1,69 +1,56 @@
 .card {
+  display: flex;
+  flex-direction: column; /* Ensure content stacks */
+  justify-content: space-between;
   border: 1px solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
   position: relative;
-  cursor: pointer;
-  transition: ease-in-out 0.2s;
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for box shadow */
   background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-gray-9)) !important;
-  margin: 2rem;
+  min-height: 675px; /* Adjusts dynamically based on content */
+  width: 350px;
+  padding: var(--mantine-spacing-xl);
+  border-radius: var(--mantine-radius-xl);
   box-shadow:
     0 4px 15px rgba(0, 143, 232, 0.9),
     /* Blue glow */ 0 8px 30px rgba(0, 196, 255, 0.9); /* Subtle spread effect */
 }
 
 .card:nth-child(2) {
-  transform: scale(1.2) scaleY(1.2);
+  min-height: 700px; /* Dynamically adjust based on content */
+  width: 400px;
+
   box-shadow:
     0 4px 20px rgba(255, 215, 0, 0.7),
     /* Soft gold glow */ 0 0 10px rgba(255, 223, 0, 0.8); /* Inner golden highlight */
 }
 
-.cardTitle {
-  &::after {
-    content: '';
-    display: block;
-    background-color: var(--mantine-color-blue-filled);
-    width: 45px;
-    height: 2px;
-    margin-top: var(--mantine-spacing-sm);
+.card:hover,
+.card:active {
+  box-shadow:
+    0 4px 20px rgba(0, 255, 143, 0.7),
+    /* Green glow on hover */ 0 0 15px rgba(0, 255, 143, 0.8); /* Subtle highlight */
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    flex-direction: column;
   }
 }
 
-.outterContainer {
+.outter {
   width: 100vw;
-  max-width: 100vw;
+  max-width: 95vw;
   position: relative;
   padding-left: 0;
   padding-right: 0;
-  min-height: 120vh;
-}
-
-.rain {
-  position: absolute;
-  z-index: -1;
-  height: 50%;
-  max-height: 50%;
-  min-width: 100%;
-  object-fit: cover;
-  max-width: 100%;
-  /* Mobile-specific adjustments for focus */
-  @media (max-width: $mantine-breakpoint-sm) {
-    /* display: none; */
-  }
-}
-
-.rain2 {
-  position: absolute;
-  z-index: -1;
-  height: 50%;
-  min-width: 100%;
-  max-width: 100%;
-  transform: scaleY(-1);
-  bottom: 0;
-  object-fit: cover;
-  /* Mobile-specific adjustments for focus */
-  @media (max-width: $mantine-breakpoint-sm) {
-    /* display: none; */
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .under {
@@ -73,18 +60,41 @@
 }
 
 .valueBadge {
+  cursor: default;
+  position: absolute;
   background: linear-gradient(90deg, #6a5af9, #32d3fd); /* Modern gradient */
   color: white; /* Clean and readable */
   font-weight: bold;
   font-size: 0.85rem; /* Slightly smaller for subtlety */
-  text-transform: uppercase;
   padding: 0.3rem 0.6rem;
-  border-radius: 16px; /* Rounded for a tag-like feel */
-  position: absolute;
+  border-radius: 10px; /* Rounded for a tag-like feel */
   top: 1rem;
   right: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
   animation: glow 3s infinite; /* Optional: Subtle glowing effect */
+}
+
+.titleContainer {
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.cardTitle {
+  font-size: var(--mantine-h2-font-size);
+  align-self: start;
+}
+
+.cardPrice {
+  font-size: var(--mantine-font-size-sm);
+  align-self: end;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+  align-items: center;
+  margin-bottom: var(--mantine-spacing-md);
 }
 
 @keyframes glow {

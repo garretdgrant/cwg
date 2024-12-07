@@ -6,6 +6,7 @@
   display: flex;
   justify-content: 'center';
   align-items: center;
+
   @media (max-width: $mantine-breakpoint-md) {
     max-height: 50vh;
     max-width: 60vw;
@@ -40,6 +41,7 @@
   display: flex;
   align-items: top;
   max-height: 70vh;
+
   @media (max-width: $mantine-breakpoint-md) {
     max-width: $mantine-breakpoint-xs;
   }

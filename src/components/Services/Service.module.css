@@ -1,0 +1,97 @@
+.serviceContainer {
+  position: relative;
+  padding: 1rem;
+  background-color: var(--mantine-color-gray-7);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.serviceTitle {
+  color: var(--mantine-color-gray-0);
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.serviceSubtitle {
+  color: var(--mantine-color-gray-0);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.serviceText {
+  color: var(--mantine-color-gray-3);
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.serviceSection {
+  position: relative;
+}
+
+.listTitle {
+  font-weight: bold;
+}
+
+.image {
+  padding: 0;
+  position: absolute;
+  top: 55%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  height: auto; /* Maintain aspect ratio */
+  max-width: 700px;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    max-width: 100%;
+    position: relative; /* Reset position */
+    top: auto; /* Reset top */
+    left: auto; /* Reset left */
+    transform: none;
+    justify-self: center;
+  }
+}
+
+.image2 {
+  position: absolute;
+  top: 60%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  max-width: 50%; /* Scale down based on container */
+  max-height: 700px; /* Prevent images from becoming too tall */
+  width: 60%;
+  /* Ensure responsive behavior */
+  @media (max-width: $mantine-breakpoint-md) {
+    max-width: 100%;
+    position: relative; /* Reset position */
+    top: auto; /* Reset top */
+    left: auto; /* Reset left */
+    transform: none;
+    justify-self: center;
+  }
+}
+
+.image3 {
+  position: absolute;
+  top: 60%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  max-width: 50%; /* Scale down based on container */
+  max-height: 700px; /* Prevent images from becoming too tall */
+  width: 60%;
+  /* Ensure responsive behavior */
+  @media (max-width: $mantine-breakpoint-md) {
+    position: relative; /* Reset position */
+    top: auto; /* Reset top */
+    left: auto; /* Reset left */
+    transform: none;
+    justify-self: center;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.serviceGrid {
+  margin-top: 2rem;
+}
