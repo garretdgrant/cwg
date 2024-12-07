@@ -29,16 +29,16 @@ export function GetInTouch() {
 
           <form
             className={classes.form}
-            name="contact" // Unique form name
+            name="contact" // Must match the hidden form's name
             method="POST"
             data-netlify="true" // Enables Netlify Forms
-            netlify-honeypot="bot-field" // Optional: Adds a honeypot field for spam protection
-            action="/thank-you" // Redirect after successful submission
+            netlify-honeypot="bot-field" // Adds a honeypot field for spam protection
+            action="/contact" // Redirect after successful submission
           >
             {/* Hidden input for form name */}
             <input type="hidden" name="form-name" value="contact" />
 
-            {/* Honeypot field (optional) */}
+            {/* Honeypot field */}
             <p style={{ display: 'none' }}>
               <label>
                 Don’t fill this out if you're human: <input name="bot-field" />
@@ -54,13 +54,13 @@ export function GetInTouch() {
                 <TextInput
                   label="Your name"
                   placeholder="Your name"
-                  name="name" // Added name attribute
+                  name="name" // Must match hidden form
                   required
                 />
                 <TextInput
                   label="Your email"
                   placeholder="hello@mantine.dev"
-                  name="email" // Added name attribute
+                  name="email" // Must match hidden form
                   required
                 />
               </SimpleGrid>
@@ -69,7 +69,7 @@ export function GetInTouch() {
                 mt="md"
                 label="Subject"
                 placeholder="Subject"
-                name="subject" // Added name attribute
+                name="subject" // Must match hidden form
                 required
               />
 
@@ -78,9 +78,13 @@ export function GetInTouch() {
                 label="Your message"
                 placeholder="Please include all relevant information"
                 minRows={3}
-                name="message" // Added name attribute
+                name="message" // Must match hidden form
                 required
               />
+
+              {/* reCAPTCHA Widget (Optional) */}
+              {/* Uncomment the following line if you're using reCAPTCHA */}
+              {/* <div data-netlify-recaptcha="true"></div> */}
 
               <Group justify="flex-end" mt="md">
                 <Button type="submit" className={classes.control}>
