@@ -49,7 +49,6 @@ export function GetInTouch() {
             data-netlify="true" // Enables Netlify Forms
             netlify-honeypot="bot-field" // Optional: Adds a honeypot field for spam protection
             onSubmit={form.onSubmit(form.validate)}
-
           >
             {/* Hidden input for form name */}
             <input type="hidden" name="form-name" value="contact" />
