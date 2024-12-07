@@ -22,28 +22,28 @@ import {
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import logo from '@/favicon.svg';
+import { useNavigateToTop } from '@/hooks/useNavigateToTop';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import classes from './HeaderMegaMenu.module.css';
-import { useNavigateToTop } from '@/hooks/useNavigateToTop';
 
 const servicesData = [
   {
     icon: IconCode,
     title: 'Web Design',
     description: `Beautiful, user-friendly websites tailored to your brand and goals.`,
-    to: 'services',
+    to: '/services#web-design',
   },
   {
     icon: IconApps,
     title: 'Full Web Applications',
     description: `Custom web apps built for performance, scalability, and your business needs.`,
-    to: 'services',
+    to: '/services#web-app',
   },
   {
     icon: IconBook,
     title: 'Seo',
     description: `Boost your visibility and rankings with proven SEO strategies.`,
-    to: 'services',
+    to: '/services#seo',
   },
 ];
 

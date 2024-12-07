@@ -5,8 +5,7 @@ import ServicesTitle from '@/components/ServicesTitle/ServicesTitle';
 import laptopRocket from '../components/Services/laptop-rocket.svg';
 import seoBro from '../components/Services/SEO-bro.svg';
 import webApp from '../components/Services/web-app.png';
-
-import classes from '../components/Services/Service.module.css'
+import classes from '../components/Services/Service.module.css';
 
 export interface ServiceProps {
   title: string;
@@ -18,9 +17,11 @@ export interface ServiceProps {
   imgClass: string;
   bottomTitle: string;
   bottomContent: string;
+  anchorId: string;
 }
 function ServicesPage() {
   const webServiceProps: ServiceProps = {
+    anchorId: 'web-design',
     title: 'Web-Design: 5 Page Business Website',
     info: `Our 5 Page Business Website is fully customizable to meet your unique needs. While we
           recommend a structure that includes a home page, about page, services page, contact page,
@@ -53,6 +54,7 @@ function ServicesPage() {
     speed, choose success.`,
   };
   const seoServiceProps: ServiceProps = {
+    anchorId: 'seo',
     title: 'Seo Services: Dominate Search Rankings',
     info: `Our SEO service is designed to elevate your online presence and drive consistent,
           high-quality traffic to your website. Whether you’re targeting local customers or
@@ -115,6 +117,7 @@ function ServicesPage() {
           features, or scaling infrastructure, our applications are built to adapt. Let us
           create a web app that doesn’t just meet your needs today but prepares your business
           for the challenges of tomorrow.`,
+    anchorId: 'web-app',
   };
 
   return (

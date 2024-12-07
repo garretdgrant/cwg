@@ -2,8 +2,10 @@ import { IconCheck } from '@tabler/icons-react';
 import { Container, Group, Image, List, SimpleGrid, Text, ThemeIcon, Title } from '@mantine/core';
 import { ServiceProps } from '@/pages/ServicesPage';
 import classes from './Service.module.css';
+import useScrollToAnchor from '@/hooks/useScrollToAnchor';
 
 function Service({
+  anchorId,
   title,
   info,
   detailTitle,
@@ -14,8 +16,9 @@ function Service({
   bottomContent,
   bottomTitle,
 }: ServiceProps) {
+  useScrollToAnchor()
   return (
-    <Container size="lg" className={classes.serviceContainer}>
+    <Container id={anchorId} size="lg" className={classes.serviceContainer}>
       {/* Title Section */}
       <Group>
         <Title order={1} className={classes.serviceTitle}>
@@ -53,9 +56,7 @@ function Service({
         >
           {matters.map((item) => (
             <List.Item key={item}>
-              <Text fw={'bold'}>
-              {item.split(':')[0]}:
-              </Text>
+              <Text fw={'bold'}>{item.split(':')[0]}:</Text>
               {item.split(':')[1]}
             </List.Item>
           ))}

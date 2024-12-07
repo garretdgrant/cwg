@@ -54,7 +54,7 @@
 
 .image2 {
   position: absolute;
-  top: 55%;
+  top: 60%;
   left: 75%;
   transform: translate(-50%, -50%);
   max-width: 50%; /* Scale down based on container */
@@ -90,10 +90,6 @@
     max-width: 100%;
   }
 }
-
-
-
-
 
 .serviceGrid {
   margin-top: 2rem;
