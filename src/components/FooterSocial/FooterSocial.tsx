@@ -10,10 +10,10 @@ export function FooterSocial() {
     linkedIn: 'https://www.linkedin.com/in/garret-d-grant/',
     instagram: 'https://www.instagram.com/garret.grant/',
     facebook: 'https://www.facebook.com/garret.d.grant',
-  }
+  };
   const handleClick = (link: string) => {
-    window.open(link,  '_blank', 'noopener,noreferrer')
-  }
+    window.open(link, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <div className={classes.footer}>
@@ -25,13 +25,28 @@ export function FooterSocial() {
           <Text>El Dorado Web Design</Text>
         </Group>
         <Group gap={0} className={classes.links} justify="flex-end" wrap="nowrap">
-          <ActionIcon onClick={()=>handleClick(socials.linkedIn)} size="xl" color="gray" variant="subtle">
+          <ActionIcon
+            onClick={() => handleClick(socials.linkedIn)}
+            size="xl"
+            color="gray"
+            variant="subtle"
+          >
             <IconBrandLinkedin size={28} stroke={1.25} />
           </ActionIcon>
-          <ActionIcon onClick={()=>handleClick(socials.facebook)} size="xl" color="gray" variant="subtle">
+          <ActionIcon
+            onClick={() => handleClick(socials.facebook)}
+            size="xl"
+            color="gray"
+            variant="subtle"
+          >
             <IconBrandMeta size={28} stroke={1.25} />
           </ActionIcon>
-          <ActionIcon onClick={()=>handleClick(socials.instagram)} size="xl" color="gray" variant="subtle">
+          <ActionIcon
+            onClick={() => handleClick(socials.instagram)}
+            size="xl"
+            color="gray"
+            variant="subtle"
+          >
             <IconBrandInstagram size={28} stroke={1.25} />
           </ActionIcon>
         </Group>
