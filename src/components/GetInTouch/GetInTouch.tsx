@@ -1,4 +1,3 @@
-import { FormEvent, useState } from 'react';
 import {
   Button,
   Container,
@@ -19,19 +18,14 @@ import classes from './GetInTouch.module.css';
 export function GetInTouch() {
   const form = useForm({
     mode: 'uncontrolled',
-    initialValues: { name: '', email: '', subject: ''},
+    initialValues: { name: '', email: '', subject: '', message: ''},
     validate: {
-      name: (value) => (value.length < 3 ? 'Name must have at least 3 letters' : null),
+      name: (value: string) => (value.length < 3 ? 'Name must have at least 3 letters' : null),
       email: (value: string) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
       subject: (value: string) => (value.length < 3 ? 'Subject must have at least 3 letters' : null),
+      message: (value: string) => (value.length < 25 ? 'Message must have at least 3 letters' : null),
     },
   });
-
-  const handleSumbit = (values: any) => {
-    console.log(values);
-    form.validate();
-    console.log(form.errors);
-  };
 
   return (
     <Container className={classes.outter}>
@@ -52,7 +46,7 @@ export function GetInTouch() {
             method="POST"
             data-netlify="true" // Enables Netlify Forms
             netlify-honeypot="bot-field" // Optional: Adds a honeypot field for spam protection
-            onSubmit={form.onSubmit((values) => handleSumbit(values))}
+            onSubmit={form.onSubmit(form.validate)}
           >
             {/* Hidden input for form name */}
             <input type="hidden" name="form-name" value="contact" />
@@ -90,7 +84,7 @@ export function GetInTouch() {
               </SimpleGrid>
 
               <NativeSelect
-                mt={'md'}
+                mt="md"
                 name="hear"
                 label="How did you hear about us?"
                 key={form.key('hear')}
