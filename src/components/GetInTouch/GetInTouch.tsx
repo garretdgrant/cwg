@@ -1,19 +1,38 @@
+import { FormEvent, useState } from 'react';
 import {
   Button,
   Container,
   Group,
   Image,
+  NativeSelect,
   Paper,
   SimpleGrid,
   Text,
   Textarea,
   TextInput,
 } from '@mantine/core';
+import { useForm } from '@mantine/form';
 import { ContactIconsList } from './ContactIcons';
 import pattern from './polygon.svg';
 import classes from './GetInTouch.module.css';
 
 export function GetInTouch() {
+  const form = useForm({
+    mode: 'uncontrolled',
+    initialValues: { name: '', email: '', subject: ''},
+    validate: {
+      name: (value) => (value.length < 3 ? 'Name must have at least 3 letters' : null),
+      email: (value: string) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
+      subject: (value: string) => (value.length < 3 ? 'Subject must have at least 3 letters' : null),
+    },
+  });
+
+  const handleSumbit = (values: any) => {
+    console.log(values);
+    form.validate();
+    console.log(form.errors);
+  };
+
   return (
     <Container className={classes.outter}>
       <Image className={classes.pattern} src={pattern} pos="absolute" w="100%" />
@@ -33,7 +52,7 @@ export function GetInTouch() {
             method="POST"
             data-netlify="true" // Enables Netlify Forms
             netlify-honeypot="bot-field" // Optional: Adds a honeypot field for spam protection
-            action="/thank-you" // Redirect after successful submission
+            onSubmit={form.onSubmit((values) => handleSumbit(values))}
           >
             {/* Hidden input for form name */}
             <input type="hidden" name="form-name" value="contact" />
@@ -56,14 +75,45 @@ export function GetInTouch() {
                   placeholder="Your name"
                   name="name" // Added name attribute
                   required
+                  key={form.key('name')}
+                  {...form.getInputProps('name')}
+
                 />
                 <TextInput
                   label="Your email"
                   placeholder="hello@mantine.dev"
                   name="email" // Added name attribute
                   required
+                  key={form.key('email')}
+                  {...form.getInputProps('email')}
                 />
               </SimpleGrid>
+
+              <NativeSelect
+                mt={'md'}
+                name="hear"
+                label="How did you hear about us?"
+                key={form.key('hear')}
+                {...form.getInputProps('here')}
+                data={[
+                  {
+                    group: 'Online',
+                    items: [
+                      { label: 'other', value: 'other' },
+                      { label: 'Instagram', value: 'instagram' },
+                      { label: 'Facebook', value: 'facebook' },
+                      { label: 'Web Search (google, bing, etc)', value: 'web' },
+                    ],
+                  },
+                  {
+                    group: 'Referral',
+                    items: [
+                      { label: 'Referral', value: 'referral' },
+                      { label: 'other', value: 'other' },
+                    ],
+                  },
+                ]}
+              />
 
               <TextInput
                 mt="md"
@@ -71,6 +121,8 @@ export function GetInTouch() {
                 placeholder="Subject"
                 name="subject" // Added name attribute
                 required
+                key={form.key('subject')}
+                {...form.getInputProps('subject')}
               />
 
               <Textarea
@@ -80,6 +132,8 @@ export function GetInTouch() {
                 minRows={3}
                 name="message" // Added name attribute
                 required
+                key={form.key('message')}
+                {...form.getInputProps('message')}
               />
 
               <Group justify="flex-end" mt="md">
