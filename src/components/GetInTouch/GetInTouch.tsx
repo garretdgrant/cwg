@@ -104,7 +104,7 @@ export function GetInTouch() {
                 />
                 <TextInput
                   label="Your email"
-                  placeholder="hello@mantine.dev"
+                  placeholder="me@edcwebdesign.com"
                   name="email" // Must match hidden form
                   required
                   key={form.key('email')}
