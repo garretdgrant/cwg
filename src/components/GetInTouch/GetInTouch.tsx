@@ -27,24 +27,59 @@ export function GetInTouch() {
             <ContactIconsList />
           </div>
 
-          <form className={classes.form} onSubmit={(event) => event.preventDefault()}>
+          <form
+            className={classes.form}
+            name="contact" // Unique form name
+            method="POST"
+            data-netlify="true" // Enables Netlify Forms
+            netlify-honeypot="bot-field" // Optional: Adds a honeypot field for spam protection
+            action="/thank-you" // Redirect after successful submission
+          >
+            {/* Hidden input for form name */}
+            <input type="hidden" name="form-name" value="contact" />
+
+            {/* Honeypot field (optional) */}
+            <p style={{ display: 'none' }}>
+              <label>
+                Don’t fill this out if you're human: <input name="bot-field" />
+              </label>
+            </p>
+
             <Text fz="lg" fw={700} className={classes.title}>
               Let’s Build Something Amazing Together!
             </Text>
 
             <div className={classes.fields}>
               <SimpleGrid cols={{ base: 1, sm: 2 }}>
-                <TextInput label="Your name" placeholder="Your name" />
-                <TextInput label="Your email" placeholder="hello@mantine.dev" required />
+                <TextInput
+                  label="Your name"
+                  placeholder="Your name"
+                  name="name" // Added name attribute
+                  required
+                />
+                <TextInput
+                  label="Your email"
+                  placeholder="hello@mantine.dev"
+                  name="email" // Added name attribute
+                  required
+                />
               </SimpleGrid>
 
-              <TextInput mt="md" label="Subject" placeholder="Subject" required />
+              <TextInput
+                mt="md"
+                label="Subject"
+                placeholder="Subject"
+                name="subject" // Added name attribute
+                required
+              />
 
               <Textarea
                 mt="md"
                 label="Your message"
                 placeholder="Please include all relevant information"
                 minRows={3}
+                name="message" // Added name attribute
+                required
               />
 
               <Group justify="flex-end" mt="md">
