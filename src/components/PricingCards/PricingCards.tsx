@@ -16,29 +16,42 @@ import classes from './PricingCards.module.css';
 const basicServices = [
   { title: 'Design and Development', included: true },
   { title: '5 Pages Included', included: true },
-  { title: 'SEO Optimization', included: true}
+  { title: 'SEO Optimization', included: true },
+
 ];
 
 const allBundleServices = [
-  { title: 'Design and Development', included: false },
-  { title: '5 Pages Included', included: false },
+  { title: '+$250 To Add a Blog', included: true },
+  { title: '+$100 fee per Page After 5', included: true },
+  { title: '+$50/mo Unlimited Edits', included: true },
+  { title: '24/7 Support', included: false },
+  { title: 'Lifetime Updates', included: false },
 ];
 
 const monthlyServices = [
-  { title: 'Design and Development', included: false },
-  { title: '5 Pages Included', included: false },
+  { title: 'Hosting Included', included: true },
+  { title: 'Unlimited Edits', included: true },
+  { title: '24/7 Support', included: true },
+  { title: 'Lifetime Updates', included: true },
+  { title: '+$250 To Add a Blog', included: true },
+  { title: '+$100 fee per Page After 5', included: true },
 ];
 
 const webAppServices = [
-  { title: 'Design and Development', included: false },
-  { title: '5 Pages Included', included: false },
-];
+  { title: 'Database Implementation', included: true },
+  { title: 'API Integrations', included: true },
+  { title: 'Responsive Design', included: true },
+  { title: 'User Authentication and Security', included: true },
+  { title: 'Admin Dashboard', included: true },
+  { title: 'Third-Party Integrations', included: true },
+  { title: 'Scalability Optimization', included: true },
+  { title: 'SEO-Ready', included: true },
+  { title: 'Performance Optimization', included: true },
+  { title: 'Maintenance and Support', included: true },
+  { title: 'At Cost Hosting fees', included: true },
+  { title: 'Flexibility and Custiomization', included: true },
 
-const ctaButton = (
-  <Button size="md" variant="outline">
-    Get Started
-  </Button>
-);
+];
 
 const featureData = [
   {
@@ -46,21 +59,18 @@ const featureData = [
     services: [...basicServices, ...allBundleServices],
     icon: IconPackages,
     pricing: { price: '$4000', type: '+$25/mo Hosting' },
-    button: ctaButton,
   },
   {
     title: 'Monthly Plan',
     services: [...basicServices, ...monthlyServices],
     icon: IconCalendar,
     pricing: { price: '$200', type: 'Per Month' },
-    button: ctaButton,
   },
   {
     title: 'Custom Web App',
-    services: [...basicServices, ...webAppServices],
+    services: [...webAppServices],
     icon: IconDatabaseCog,
     pricing: { price: '$8k', type: 'Starting' },
-    button: ctaButton,
   },
 ];
 
@@ -69,11 +79,7 @@ export function PricingCards() {
   const navigate = useNavigateToTop();
   const features = featureData.map((feature, index) => {
     return (
-      <Card
-        onClick={() => navigate('/contact', 'instant')}
-        key={feature.title}
-        className={classes.card}
-      >
+      <Card key={feature.title} className={classes.card} tabIndex={0}>
         <Group display={'flex'} w={'100%'} justify="space-between">
           <feature.icon size={50} stroke={2} color={theme.colors.blue[3]} />
           {index === 1 ? (
@@ -110,7 +116,9 @@ export function PricingCards() {
           <Text className={classes.cardPrice}>{feature.pricing.type}</Text>
         </Group>
         <Group className={classes.buttonContainer} justify="center">
-          {feature.button}
+          <Button onClick={() => navigate('/contact', 'instant')} size="md" variant="outline">
+            Get Started
+          </Button>
         </Group>
       </Card>
     );

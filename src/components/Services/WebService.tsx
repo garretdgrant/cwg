@@ -1,8 +1,8 @@
 import { IconCheck } from '@tabler/icons-react';
 import { Container, Group, Image, List, SimpleGrid, Text, ThemeIcon, Title } from '@mantine/core';
+import useScrollToAnchor from '@/hooks/useScrollToAnchor';
 import { ServiceProps } from '@/pages/ServicesPage';
 import classes from './Service.module.css';
-import useScrollToAnchor from '@/hooks/useScrollToAnchor';
 
 function Service({
   anchorId,
@@ -16,7 +16,7 @@ function Service({
   bottomContent,
   bottomTitle,
 }: ServiceProps) {
-  useScrollToAnchor()
+  useScrollToAnchor();
   return (
     <Container id={anchorId} size="lg" className={classes.serviceContainer}>
       {/* Title Section */}

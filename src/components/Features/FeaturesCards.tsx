@@ -1,5 +1,6 @@
 import {
   IconBrandAws,
+  IconCloudLock,
   IconDeviceIpadCheck,
   IconGauge,
   IconLocation,
@@ -26,8 +27,8 @@ const featureData = [
   {
     title: 'Top-Tier Security',
     description:
-      'Built on AWS, your website benefits from enterprise-level security and safeguards to protect your data and customer information.',
-    icon: IconBrandAws,
+      'Your website benefits from enterprise-level security and safeguards to protect your data and customer information.',
+    icon: IconCloudLock,
   },
   {
     title: 'SEO Optimization',
