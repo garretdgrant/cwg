@@ -1,4 +1,4 @@
-import { Center, SimpleGrid } from '@mantine/core';
+import { SimpleGrid } from '@mantine/core';
 import { FooterSocial } from '@/components/FooterSocial/FooterSocial';
 import Service from '@/components/Services/WebService';
 import ServicesTitle from '@/components/ServicesTitle/ServicesTitle';
@@ -123,7 +123,7 @@ function ServicesPage() {
   return (
     <>
       <ServicesTitle />
-      <SimpleGrid cols={{ sm: 1, md: 2 }} verticalSpacing={'lg'} p={'lg'} spacing={'lg'}>
+      <SimpleGrid cols={{ sm: 1, md: 2 }} verticalSpacing="lg" p="lg" spacing="lg">
         <Service {...webServiceProps} />
         <Service {...seoServiceProps} />
         <Service {...customWebApp} />

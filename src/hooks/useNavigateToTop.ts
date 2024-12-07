@@ -5,7 +5,7 @@ export function useNavigateToTop() {
 
   const navigateToTop = (path: To, behavior: ScrollBehavior) => {
     navigate(path);
-    window.scrollTo({ top: 0, behavior: behavior });
+    window.scrollTo({ top: 0, behavior });
   };
 
   return navigateToTop;

@@ -47,7 +47,7 @@ function Service({
         </Title>
         <List
           spacing="xs"
-          c={'white'}
+          c="white"
           icon={
             <ThemeIcon color="teal" size={24} radius="xl">
               <IconCheck size={16} />
@@ -56,7 +56,7 @@ function Service({
         >
           {matters.map((item) => (
             <List.Item key={item}>
-              <Text fw={'bold'}>{item.split(':')[0]}:</Text>
+              <Text fw="bold">{item.split(':')[0]}:</Text>
               {item.split(':')[1]}
             </List.Item>
           ))}

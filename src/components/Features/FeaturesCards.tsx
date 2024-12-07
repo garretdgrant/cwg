@@ -1,5 +1,4 @@
 import {
-  IconBrandAws,
   IconCloudLock,
   IconDeviceIpadCheck,
   IconGauge,

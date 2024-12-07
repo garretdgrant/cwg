@@ -17,7 +17,6 @@ const basicServices = [
   { title: 'Design and Development', included: true },
   { title: '5 Pages Included', included: true },
   { title: 'SEO Optimization', included: true },
-
 ];
 
 const allBundleServices = [
@@ -50,7 +49,6 @@ const webAppServices = [
   { title: 'Maintenance and Support', included: true },
   { title: 'At Cost Hosting fees', included: true },
   { title: 'Flexibility and Custiomization', included: true },
-
 ];
 
 const featureData = [
@@ -80,7 +78,7 @@ export function PricingCards() {
   const features = featureData.map((feature, index) => {
     return (
       <Card key={feature.title} className={classes.card} tabIndex={0}>
-        <Group display={'flex'} w={'100%'} justify="space-between">
+        <Group display="flex" w="100%" justify="space-between">
           <feature.icon size={50} stroke={2} color={theme.colors.blue[3]} />
           {index === 1 ? (
             <Button className={classes.valueBadge} size="lg" disabled>
@@ -88,16 +86,16 @@ export function PricingCards() {
             </Button>
           ) : null}
         </Group>
-        <Group display={'flex'} className={classes.titleContainer}>
+        <Group display="flex" className={classes.titleContainer}>
           <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
             {feature.title}
           </Text>
         </Group>
-        <Divider my={'lg'} mx={'md'} />
+        <Divider my="lg" mx="md" />
         <Flex direction="column">
           {feature.services.map((service) => {
             return (
-              <Flex direction="row" align="center" justify="space-between">
+              <Flex key={service.title} direction="row" align="center" justify="space-between">
                 <Text className={classes.description}>{service.title}</Text>
                 {service.included ? (
                   <IconCheck color="green" stroke={2} size={20} />
@@ -108,8 +106,8 @@ export function PricingCards() {
             );
           })}
         </Flex>
-        <Divider mt={'lg'} mb={'lg'} />
-        <Group justify="center" gap={'xs'} p={'xs'}>
+        <Divider mt="lg" mb="lg" />
+        <Group justify="center" gap="xs" p="xs">
           <Text fw={500} className={classes.cardTitle}>
             {feature.pricing.price}
           </Text>

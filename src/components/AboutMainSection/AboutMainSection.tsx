@@ -1,4 +1,3 @@
-import { IconCheck } from '@tabler/icons-react';
 import { Box, Button, Container, Divider, Group, Paper, Text, Title } from '@mantine/core';
 import { useNavigateToTop } from '@/hooks/useNavigateToTop';
 import HStackImages from '../HStackImages/HStackImages';
@@ -19,8 +18,8 @@ export function AboutMainSection() {
       </Box>
       <div className={classes.inner}>
         <div className={classes.content}>
-          <Paper component="section" radius={'xl'} shadow="xl" className={classes.paper} withBorder>
-            <Text fw={'bold'} mt="md">
+          <Paper component="section" radius="xl" shadow="xl" className={classes.paper} withBorder>
+            <Text fw="bold" mt="md">
               Hi, my name is Garret, and I am the founder and lead engineer of El Dorado County Web
               Design. I’m proud to bring my experience as a professional software engineer and my
               education from UCLA back to my roots in El Dorado County, where I was born and raised.
@@ -51,7 +50,7 @@ export function AboutMainSection() {
         </div>
         <HStackImages imageLeft={garret} imageRight={tahoe} />
       </div>
-      <Group display={'flex'} justify="center">
+      <Group display="flex" justify="center">
         <Button
           onClick={() => navigate('/contact', 'instant')}
           variant="gradient"

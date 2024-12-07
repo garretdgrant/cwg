@@ -1,5 +1,5 @@
 import { IconApps, IconBook, IconChevronDown, IconCode } from '@tabler/icons-react';
-import { NavLink, To, useNavigate } from 'react-router-dom';
+import { NavLink, To } from 'react-router-dom';
 import {
   ActionIcon,
   Anchor,
