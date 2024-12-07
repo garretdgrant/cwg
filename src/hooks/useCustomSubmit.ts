@@ -24,6 +24,7 @@ export const useCustomSubmit = (form: any, notificationStyle: any) => {
         });
         form.reset();
         navigate('/', { replace: true });
+        return true;
       } catch (error) {
         notifications.show({
           color: 'red',
@@ -42,6 +43,7 @@ export const useCustomSubmit = (form: any, notificationStyle: any) => {
         classNames: notificationStyle,
       });
     }
+    return false;
   };
 
   return customSubmit;

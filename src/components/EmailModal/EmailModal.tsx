@@ -21,7 +21,6 @@ function EmailModal() {
     },
   });
   const customSubmit = useCustomSubmit(form, notificationStyle);
-
   return (
     <>
       <Modal size="auto" opened={opened} onClose={close}>
@@ -38,14 +37,17 @@ function EmailModal() {
               hosting, unlimited edits, and ongoing maintenance tailored to your business needs.
               Sign up today and get your first one month completely free!
             </Text>
-
-            {}
             <form
               name="email-modal" // Added Netlify form name
               method="POST" // Added for Netlify form submission
               data-netlify="true" // Enables Netlify Forms
               netlify-honeypot="bot-field" // Adds a honeypot field for spam prevention
-              onSubmit={customSubmit} // Kept your original onSubmit handler
+              onSubmit={async (e) => {
+                const didSumbit = await customSubmit(e);
+                if (didSumbit) {
+                  close();
+                }
+              }} // Kept your original onSubmit handler
             >
               {/* Hidden input for Netlify form name */}
               <input type="hidden" name="form-name" value="email-modal" />
