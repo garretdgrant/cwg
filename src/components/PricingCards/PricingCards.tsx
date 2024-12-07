@@ -1,7 +1,6 @@
 import { IconCalendar, IconCheck, IconDatabaseCog, IconPackages, IconX } from '@tabler/icons-react';
 import {
   Button,
-  ButtonGroup,
   Card,
   Container,
   Divider,
@@ -17,6 +16,7 @@ import classes from './PricingCards.module.css';
 const basicServices = [
   { title: 'Design and Development', included: true },
   { title: '5 Pages Included', included: true },
+  { title: 'SEO Optimization', included: true}
 ];
 
 const allBundleServices = [

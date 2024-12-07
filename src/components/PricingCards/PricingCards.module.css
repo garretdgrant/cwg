@@ -1,28 +1,65 @@
 .card {
   display: flex;
+  flex-direction: column; /* Ensure content stacks */
   justify-content: space-between;
   border: 1px solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
   position: relative;
   cursor: pointer;
-  transition: ease-in-out 0.2s;
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for box shadow */
   background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-gray-9)) !important;
-  height: 450px;
+  min-height: 450px; /* Adjusts dynamically based on content */
   width: 300px;
   padding: var(--mantine-spacing-xl);
   border-radius: var(--mantine-radius-xl);
   box-shadow:
     0 4px 15px rgba(0, 143, 232, 0.9),
     /* Blue glow */ 0 8px 30px rgba(0, 196, 255, 0.9); /* Subtle spread effect */
+
+  /* Hover for Desktop */
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      box-shadow:
+        0 4px 20px rgba(0, 255, 143, 0.7), /* Green glow on hover */
+        0 0 15px rgba(0, 255, 143, 0.8); /* Subtle highlight */
+    }
+  }
+
+  /* Focus for Mobile */
+  @media (hover: none) and (pointer: coarse) {
+    &:focus {
+      outline: none; /* Remove default focus outline */
+      box-shadow:
+        0 4px 20px rgba(0, 255, 143, 0.7), /* Green glow on hover */
+        0 0 15px rgba(0, 255, 143, 0.8); /* Subtle highlight */
+    }
+  }
 }
 
 .card:nth-child(2) {
-  height: 700px;
+  min-height: 700px; /* Dynamically adjust based on content */
   width: 400px;
+
   box-shadow:
     0 4px 20px rgba(255, 215, 0, 0.7),
     /* Soft gold glow */ 0 0 10px rgba(255, 223, 0, 0.8); /* Inner golden highlight */
-  @media (max-width: $mantine-breakpoint-md) {
-    height: 400px;
+
+  /* Hover for Desktop */
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      box-shadow:
+        0 4px 20px rgba(0, 255, 143, 0.7), /* Green glow on hover */
+        0 0 15px rgba(0, 255, 143, 0.8); /* Subtle highlight */
+    }
+  }
+
+  /* Focus for Mobile */
+  @media (hover: none) and (pointer: coarse) {
+    &:focus {
+      outline: none;
+      box-shadow:
+        0 4px 20px rgba(0, 255, 143, 0.7), /* Green glow on hover */
+        0 0 15px rgba(0, 255, 143, 0.8); /* Subtle highlight */
+    }
   }
 }
 
