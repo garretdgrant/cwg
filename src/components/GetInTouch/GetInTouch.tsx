@@ -18,12 +18,14 @@ import classes from './GetInTouch.module.css';
 export function GetInTouch() {
   const form = useForm({
     mode: 'uncontrolled',
-    initialValues: { name: '', email: '', subject: '', message: ''},
+    initialValues: { name: '', email: '', subject: '', message: '' },
     validate: {
       name: (value: string) => (value.length < 3 ? 'Name must have at least 3 letters' : null),
       email: (value: string) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-      subject: (value: string) => (value.length < 3 ? 'Subject must have at least 3 letters' : null),
-      message: (value: string) => (value.length < 25 ? 'Message must have at least 3 letters' : null),
+      subject: (value: string) =>
+        value.length < 3 ? 'Subject must have at least 3 letters' : null,
+      message: (value: string) =>
+        value.length < 25 ? 'Message must have at least 3 letters' : null,
     },
   });
 
@@ -71,7 +73,6 @@ export function GetInTouch() {
                   required
                   key={form.key('name')}
                   {...form.getInputProps('name')}
-
                 />
                 <TextInput
                   label="Your email"
