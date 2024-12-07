@@ -11,11 +11,15 @@ import {
   TextInput,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import { notifications } from '@mantine/notifications';
+import { useNavigateToTop } from '@/hooks/useNavigateToTop';
 import { ContactIconsList } from './ContactIcons';
 import pattern from './polygon.svg';
 import classes from './GetInTouch.module.css';
+import notificationStyle from './notifications.module.css';
 
 export function GetInTouch() {
+  const navigate = useNavigateToTop();
   const form = useForm({
     mode: 'uncontrolled',
     initialValues: { name: '', email: '', subject: '', message: '' },
@@ -25,9 +29,33 @@ export function GetInTouch() {
       subject: (value: string) =>
         value.length < 3 ? 'Subject must have at least 3 letters' : null,
       message: (value: string) =>
-        value.length < 25 ? 'Message must have at least 3 letters' : null,
+        value.length < 25 ? 'Message must have at least 25 letters' : null,
     },
   });
+
+  const validatedSubmit = () => {
+    notifications.show({
+      color: 'green',
+      title: 'Message Sent',
+      message: 'Your message has been sent, we will contact you soon :)',
+      classNames: notificationStyle,
+      position: 'top-center',
+      pos: 'fixed',
+    });
+    form.reset();
+    navigate('/', 'instant');
+  };
+
+  const errorSubmit = () => {
+    notifications.show({
+      color: 'red',
+      title: 'Message Failed',
+      message: 'Please correct errors and send again :(',
+      position: 'top-center',
+      classNames: notificationStyle,
+      pos: 'absolute',
+    });
+  };
 
   return (
     <Container className={classes.outter}>
@@ -48,8 +76,7 @@ export function GetInTouch() {
             method="POST"
             data-netlify="true" // Enables Netlify Forms
             netlify-honeypot="bot-field" // Optional: Adds a honeypot field for spam protection
-            onSubmit={form.onSubmit(form.validate)}
-
+            onSubmit={form.onSubmit(validatedSubmit, errorSubmit)}
           >
             {/* Hidden input for form name */}
             <input type="hidden" name="form-name" value="contact" />
@@ -77,7 +104,7 @@ export function GetInTouch() {
                 />
                 <TextInput
                   label="Your email"
-                  placeholder="hello@mantine.dev"
+                  placeholder="me@edcwebdesign.com"
                   name="email" // Must match hidden form
                   required
                   key={form.key('email')}

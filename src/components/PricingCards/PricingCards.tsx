@@ -23,6 +23,7 @@ const allBundleServices = [
   { title: '+$250 To Add a Blog', included: true },
   { title: '+$100 fee per Page After 5', included: true },
   { title: '+$50/mo Unlimited Edits', included: true },
+  { title: 'No minimum contract', included: true },
   { title: '24/7 Support', included: false },
   { title: 'Lifetime Updates', included: false },
 ];
@@ -34,6 +35,7 @@ const monthlyServices = [
   { title: 'Lifetime Updates', included: true },
   { title: '+$250 To Add a Blog', included: true },
   { title: '+$100 fee per Page After 5', included: true },
+  { title: '12 month minimum contract', included: true },
 ];
 
 const webAppServices = [
