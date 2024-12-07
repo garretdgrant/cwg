@@ -54,13 +54,13 @@ export function GetInTouch() {
                 <TextInput
                   label="Your name"
                   placeholder="Your name"
-                  name="name" // Added name attribute
+                  name="name"
                   required
                 />
                 <TextInput
                   label="Your email"
                   placeholder="hello@mantine.dev"
-                  name="email" // Added name attribute
+                  name="email"
                   required
                 />
               </SimpleGrid>
@@ -69,7 +69,7 @@ export function GetInTouch() {
                 mt="md"
                 label="Subject"
                 placeholder="Subject"
-                name="subject" // Added name attribute
+                name="subject"
                 required
               />
 
